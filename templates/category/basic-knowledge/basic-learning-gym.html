@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>League Of Legends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {%include "page/meta-data.html" %}
+  
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="http://getwallpapers.com/wallpaper/full/8/2/c/200229.jpg" 
+            class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Kiến thức cơ bản của Gym</h1>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('sport') }}"class="btn btn-primary">Quay lại Sport</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

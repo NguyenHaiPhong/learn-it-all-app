@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {% include "page/meta-data.html" %}
+    
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4"><img src="../../../static/image/Esport/PES/pes-button-guide.png" class="img-thumbnail" ></div>
+            <h1 class="text-center mt-4 d-flex justify-content-center">Hướng dẫn cơ bản khi chơi Pro Evolation Soccer</h1>
+                <h2>Các nút cơ bản trên tay cầm bạn phải biết</h2>    
+                        <p>
+                            <br>
+                            * Tấn công:
+                            <br>
+                            - "X": Dùng để chuyền bóng với những đường truyền ngắn, sệt và chính xác cho cầu thủ xung quanh mình. Khi bạn ấn nút này bạn 
+                            sẽ không bị lo về khả năng chuyển lỗi hay bóng chưa đến chân cầu thủ
+                            <br>
+                            - "O": Giống như nút "X". Nó được sử dụng để thực hiện các đường truyền bóng nhưng khác khác ở chỗ là thực hiện các đường chuyền bóng dài và xa.
+                            Điều này yêu cầu người chơi đạt được đến trình độ medium. Nếu bạn là người mới chơi thì nên hạn chế sử dụng nút này khi tấn công
+                            <br>
+                            - "Vuông": Có lẽ đây là nút mà được các game thủ "mong muốn" tàn phá nhất. Chức năng của nút này là tung ra các cú trời giáng vào 
+                            phía khung thành đội bạn.
+                            <br>
+                            - "W": Khi tấn công không phải lúc nào cũng dùng "X" để chuyển đường vì có khả năng đối thủ sẽ cắt được đường chuyền đấy.
+                            Vậy nên nút này có chức năng dùng để thực hiện các đường bóng chọc khe qua hàng thủ đối phương. Trận đấu sẽ trở nên đầy hưng phấn và những
+                            sự "cáu bẳn" cho đối phương nếu bạn kết hợp nhịp nhàng giữa việc di chuyển, chọc khe và ghi bàn
+                            <br>
+                            - "R1": Dùng để điều khiển cầu thủ chạy nhanh. Lưu ý: ấn 2 lần nút này dùng để đẩy bóng dài đi về phía trước 
+                            <br>
+                            - "L1": Có chức năng che bóng không để đối phương cướp bóng
+                            <br>
+                            * Phòng thủ
+                            <br>
+                            - "X": Điều khiển cầu thủ theo kèm 1vs1. Bạn nhớ đừng ấn 2 lần kẻo lại "ăn" những thẻ đỏ không mong muốn
+                            <br>
+                            - "O": Dùng để xoạc bóng. Có 1 hint dành cho bạn đó là hãy sử dụng nó khi bạn đang chạy ngang người cầm bóng để cướp bóng từ chân 
+                            đối phương
+                            <br>
+                            - "W": Dùng để gọi thủ môn lên khi đối thủ của bạn đang cầm bóng và không có 1 hậu vệ nào theo kèmm anh ta. 
+                        </p>
+                        <p>
+                            Đến đây thì bạn đã sẵn sàng chạy ngay ra quán PES gần đó và nhấc tay cầm lên chưa???
+                        </p>
+                </div>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('esport') }}"class="btn btn-primary">Quay lại ESport</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

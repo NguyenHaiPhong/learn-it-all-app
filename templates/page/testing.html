@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    {% include "homepage/carousel.html" %}
+    <h1 class="text-center mt-4">Chào mừng bạn đến với khóa học của chúng tôi</h1>
+    <div class="mt-4 container bootstrap snippet">
+            <div class="panel-body inf-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img alt="" style="width:650px; height:300px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ course.thumbnail }}" 
+                        data-original-title="Usuario"> 
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-0 table-responsive">
+                        <table class="table table-condensed table-responsive table-user-information">
+                            <tbody>
+                                <tr>    
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-user text-primary"></span>    
+                                            Tên khoá học                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ course.name }}     
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                            Mức độ                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ course.level }}  
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Học phí                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ course.fee }} 
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Mô tả chi tiết                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ course.description }} 
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Các video bài học                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ course.detail }} 
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Available                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ "Yes" if course.is_activating == True else "No" }} 
+                                    </td>
+                                    </tr>       
+                            </tbody>
+                        </table>
+                        </div>
+                        <br>                   
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="mb-2 container d-flex justify-content-center">
+            <button class="btn btn-text-primary">
+                {% if course.is_activating == True %}
+                    <a href="{{ url_for('order_service', course_id = course.id, customer_id = session['customer_signed_in_id']) }}">Đăng ký khoá học</a>
+                {% else %}
+                    <p class="text-center">Khoá học hiện không khả dụng.</p>
+                {% endif %}
+            </button>
+    </div>  
+    {% include "homepage/footer.html" %}
+</body>
+</html>

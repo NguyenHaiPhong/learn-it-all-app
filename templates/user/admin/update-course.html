@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["admin_signed_in"] == True %}
+    {% include "homepage/admin-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <h1 class="mt-4 text-center">Chỉnh sửa thông tin khoá học</h1>
+    <form method="POST">
+    <div class="mt-4 container bootstrap snippet">
+            <div class="panel-body inf-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img alt="Thumbnail" style="width:550px; height:350px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ course.thumbnail }}" 
+                        data-original-title="Usuario"> 
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-0 table-responsive">
+                        <table class="table table-condensed table-responsive table-user-information">
+                            <tbody>
+                                <tr>    
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-user text-primary"></span>    
+                                            Tên khoá học                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        <input type="text" name="name" value="{{ course.name }}">     
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                                Mức độ                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                            <input type="text" name="level" value="{{ course.level }}">  
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Học phí                                                    
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                            <input type="text" name="fee" value="{{ course.fee }}"> 
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Mô tả chi tiết                                             
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                            <input type="text" name="description" value="{{ course.description }}"> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <br>                   
+                    </div>
+                </div>
+            </div>
+    </div>
+    <br>
+        <div class="mb-2 container d-flex justify-content-center">
+            <input type="submit" value="Cập nhật">  
+        </div>
+    </form>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

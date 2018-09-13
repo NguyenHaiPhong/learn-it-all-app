@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>League Of Legends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {%include "page/meta-data.html" %}
+  
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://i2.wp.com/www.stunningmesh.com/wp-content/uploads/2011/12/awesome-guitar-wallpapers-designs-large-3.jpg?ssl=1" 
+            class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Ukulele nhập môn</h1>
+           <h2>Hiểu được ukulele</h2>
+                <p>
+                    Đàn Ukulele được gọi tắt là đàn uku. Đây được coi guitar phiên bản nhỏ với nhiều màu sắc 
+                    khác nhau rất bắt mắt, thường dùng để đệm hát và để độc tấu. Tiếng và âm lượng của cây đàn 
+                    này thường thay đổi theo cấu tạo và kích thước của nó. Đàn ukulele có một thế mạnh đó là khá nhỏ gọn và dễ dàng mang theo. Chính vì thế mà những người hay phải đi lại, thích giao du, thích đi du lịch thường mang theo. Không chỉ có thế, loại đàn này tương đối 
+                    dễ học và phù hợp với nhiều đối tượng, kể cả trẻ nhỏ hay người lớn tuổi, kể cả nam hay nữ.
+                </p>
+            <h2>Cách chọn đàn ukulele</h2>
+                <p>
+                    Nếu như bạn là một người mới bắt đầu và chưa biết một chút gì về cây đàn này, 
+                    bạn có thể mua cho mình một cây đàn ukulele giá rẻ và về tự học ukulele cơ bản trong 
+                    một thời gian để bạn có thể hiểu rõ hơn về cây đàn này cũng như xem mình có thực sự thích nó hay không. 
+                    Sau khi bạn đã thực sự yêu thích cũng như muốn theo đuổi nó đến cùng, bạn hãy chuẩn bị tinh thần cũng như 
+                    ngân sách để sắm một cây đàn ukulele tốt hơn, bền hơn, chuẩn hơn. Tất cả những hướng dẫn tự học đàn 
+                    ukulele cơ bản đều chỉ ra rằng nếu như bạn sở hữu một 
+                    cây đàn ukulele chất lượng, bạn sẽ có thể sở hữu những niềm vui đặc biệt trong khi học đàn.
+                </p>
+            <h2>Học chỉnh dây đàn</h2>
+                <p>
+                    Cũng giống như khi bạn học guitar, khi bạn tự học đánh đàn ukulele, bạn cũng cần phải để ý đến những dây 
+                    đàn và điều chỉnh âm thanh của dây đàn ukulele trước khi học và luyện tập. Mặc dù cây đàn này chỉ có 4 dây, 
+                    tuy nhiên, công việc chỉnh dây đàn chưa bao giờ được coi là đơn giản. Bạn nên kiên trì tự tập chỉnh dây đàn 
+                    ukulele nhiều lần cho chuẩn bởi nếu không làm như vậy thì khi bạn đánh đàn, có thể nó sẽ tạo ra những âm 
+                    thanh bị lệch và không chuẩn 
+                    xác nữa. Điều này chắc chắn có ảnh hưởng không nhỏ đến cảm nhận âm nhạc và đôi tai của bạn.  
+                </p>
+            <h2>Học từ dễ đến khó</h2>
+                <p>
+                    Đây là một điều tất nhiên đúng không nào. Bao giờ khi bạn bắt đầu tự học một thứ gì đó,
+                    bạn cũng cần phải học từ dễ đến khó, từ cơ bản đến nâng cao thì mới mang lại hiệu quả cao 
+                    nhất. Trong những ngày đầu, dù bạn có gặp bất kỳ khó khăn nào thì bạn cũng không nên tự ép 
+                    buộc mình phải học cho bằng được, điều này càng dễ làm bạn chán nản và nhụt chí mà thôi. 
+                    Thay vào đó, bạn hãy tham khảo những hướng dẫn tự học đàn ukulele cơ bản để học từ đầu đến cuối, 
+                    từ dễ đến khó, từ nhạc ký đến kỹ năng tập đàn nhé.
+                </p>
+            <h2>Ghi âm những gì mà bạn đã đánh</h2>
+                <p>
+                    Có một cách học đàn ukulele khá hay đó chính là bạn hãy tập một bài nhạc hoàn chỉnh và ghi âm nó lại, bạn 
+                    đừng đánh xong để đó nhé bởi bạn sẽ không biết được mình đánh sai ở chỗ nào đâu. Bạn hãy ghi âm và 
+                    nghe lại xem mình có bị mắc sai sót gì không, sai đến đâu, sửa đến đó. 
+                    Chắc chắn cách học này sẽ giúp cho bạn nhanh chóng tiến bộ và hoàn thiện bản thân mình hơn đấy.
+                </p>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('music') }}"class="btn btn-primary">Quay lại Music</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

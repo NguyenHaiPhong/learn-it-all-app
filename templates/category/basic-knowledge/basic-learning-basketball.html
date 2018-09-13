@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://wallpapercave.com/wp/Bi1b2FO.jpg" class="img-thumbnail" ></div>
+            <h1 class="text-center mt-4">Cách chơi bóng rổ</h1>
+                <p>
+                    Bóng rổ là môn thể thao đồng đội. Bao gồm có 2 đội chơi với năm cầu thủ, mỗi đội cố gắng ghi điểm bằng
+                    cách ném một quả bóng qua một vòng cao hơn 10 feet so với mặt đất. Trò chơi ném bóng rổ được chơi trên
+                    một khung hình chữ nhật được gọi là sân thi đấu, và có một vòng tròn lớn ở mỗi đầu. Nếu đội tấn công 
+                    đưa bóng vào chơi phía sau đường giữa sân, họ có 10 giây để có được bóng qua vạch giữa sân. 
+                    Sau khi đội tấn công đưa bóng qua vạch giữa sân, họ có thể không còn sở hữu bóng trong khu vực trong 
+                    phía sau của họ. Đội có bóng được gọi là đội tấn công, đội không có bóng được gọi là đội phòng thủ. 
+                    Đội phòng thủ luôn cố gắng giành bóng, cướp bóng, giật các đường chuyền từ đội tấn công. 
+                </p>
+                <h2>Cách tính điểm bóng rổ</h2>
+                    <p>
+                        Cách tính điểm bóng rổ bao gồm:
+                        <ul>
+                            <li>Cú ném bính thường: 2 điểm.</li>
+                            <li>Cú ném xa: 3 điểm.</li>
+                            <li>Cú ném phạt: 1 điểm.</li>
+                        </ul>
+                        Đây là quy định nằm trong điều luật được mọi người quan tâm khi tham gia bộ môn này. Khi chơi bóng rổ, đội bóng cố gắng ném bóng vào rổ, họ ghi 2 điểm và quả bóng được trả về đội còn lại. Nếu quả ném bóng được thực hiện ngoài vạch 3 điểm, quả ném đó có giá trị 3 điểm. Một quả ném phạt có giá trị 1 điểm. Ném phạt được hưởng cho một đội tùy thuộc vào các lỗi phạm luật. Phạm lỗi với vận động viên ném bóng luôn dẫn đến hai hay ba quả ném phạt, tùy thuộc vào vị trí hay thời điểm ném bóng. 
+                        Các phạm lỗi khác không dẫn đến các quả ném phạt cho đến khi số lần phạm lỗi được tích lũy lại.
+                    </p>
+                <h2>Thời gian thi đấu bóng rổ </h2>
+                    <p>
+                        Mỗi bộ môn thi đấu có khoảng thời gian thực hiện khác nhau. Đối với bộ môn bóng rổ cũng vậy, thời gian thi đấu bao gồm:
+                        <ul>
+                            <li>Thời gian thi đấu một trận là 40 phút chia ra 4 hiệp.</li>
+                            <li>Thời gian nghỉ giữa hiệp 1 và hiệp 2 là 2 phút, giữa hiệp 2 và hiệp 3 là 10 phút, giữa hiệp 3 và hiệp 4 là 2 phút.</li>
+                        </ul>
+                        <br>
+                        Khi người cầm bóng là đội tấn công:
+                        <ul>
+                            <li>Bạn phải đưa bóng sang sân đối phương trong khoảng thời gian tối đa là 8s.</li>
+                            <li>Sau khi qua sân đối phương sau 24s bạn phải ném rổ nếu ko bóng sẽ được giao cho đối phương.</li>
+                            <li>Trong khu vực ném phạt bạn không được đứng quá 3s mà trong tay không có bóng.</li>
+                            <li>Cá nhân không được giữ bóng tại chỗ quá 5s. Đối với luật ném phạt, bạn sẽ được ném phạt 1 quả nếu đưa được bóng vào rổ và bị đối phương phạm lỗi. Bạn sẽ được ném phạt 2 quả khi bị phạm lỗi trong vòng 2 điểm. Bạn sẽ được ném phạt 3 quả khi bạn bị phạm lỗi ngoài vòng 2 điểm.</li>
+                            <li> Khi tham gia bóng rổ, bạn không được phép cầm bóng chạy quá 2 bước.</li>
+                            <li>
+                                Khi nhận được bóng, có 3 phương án để bạn lựa chọn:
+                                <ul>
+                                    <li>Chuyền ngay cho đồng đội.</li>
+                                    <li>Dằn bóng rồi chuyền cho đồng đội. Nếu đang dằn bóng mà bạn cầm bóng lên lại thì phải ném rổ hoặc chuyền, nếu tiếp tục dằn lần nữa thì bị bắt lỗi 2 bóng.</li>
+                                    <li>Ném rổ.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>                      
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('sport') }}"class="btn btn-primary">Quay lại Sport</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>   
+    {% include "homepage/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <h1 class="mt-4 text-center">Thông tin cá nhân</h1>
+    <div class="mt-4 container bootstrap snippet">
+            <div class="panel-body inf-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img alt="" style="width:550px; height:350px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ customer.profile_pic }}" 
+                        data-original-title="Usuario"> 
+                    </div>
+                    <div class="col-md-6">
+                        <div class="table-responsive">
+                        <table class="table table-condensed table-responsive table-user-information">
+                            <tbody>
+                                <tr>    
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-user text-primary"></span>    
+                                            Tên                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ customer.name }}     
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                            Email                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ customer.email }}  
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                            Số điện thoại                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ customer.phone_number }} 
+                                    </td>
+                                </tr>         
+                            </tbody>
+                        </table>
+                        </div>
+                        <br>                   
+                    </div>
+                </div>
+            </div>
+    </div>
+    <br>
+    <div class="container d-flex justify-content-center">
+        <button class="btn btn-text-primary">
+                <a href="#">Chỉnh sửa thông tin cá nhân</a>  
+        </button>
+    </div>
+    <br>
+    <hr>
+    <div class="mx-1">
+        <div class="show-all-courses">
+            <div class="mt-4 mb-4 container text-danger text-center">
+                <br>
+                <h2 class="mt-2 mx-auto">Kho video</h2>
+            </div>
+            <div class="container d-flex flex-wrap">
+                {% for course in all_purchased_courses %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top card-img-top-thumbnail" src="{{ course.course_id.thumbnail }}" alt="Thumbnail">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        {{ course.course_id.name }}
+                                    </h4>
+                                    {% if course.course_id.level == "Basic" %}
+                                        <h5>Mức độ: Cơ bản</h5>
+                                    {% elif course.course_id.level == "Advance" %}
+                                        <h5>Mức độ: Nâng cao</h5>
+                                    {% else %}
+                                        <h5>Mức độ: Thành thạo</h5>
+                                    {% endif %}
+                                    <h5 class="card-text">Giới thiệu: {{ course.course_id.description }}</h5>
+                                    <a href="{{ url_for('course_content', course_id = course.course_id.id) }}"><h3>Xem video bài học</h3></a>
+                                </div>
+                        </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        </div>           
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

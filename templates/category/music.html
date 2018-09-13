@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <section class="content-section" id="portfolio">
+        <div class="container">
+            <div class="content-section-heading text-center">
+            <h2 class="mb-5 text-primary f-bungee">Kiến thức tổng quan</h2>
+            </div>
+            <div class="row no-gutters m-4">
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="{{ url_for('guitar') }}">
+                <span class="caption">
+                    <span class="caption-content">
+                    <h2>Guitar</h2>
+                    <p class="mb-0">
+                    </p>
+                    </span>
+                </span>
+                <img class="img-fluid" src="http://longwallpapers.com/Desktop-Wallpaper/guitar-wallpapers-For-Desktop-Wallpaper.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="{{ url_for('piano') }}">
+                <span class="caption">
+                    <span class="caption-content">
+                    <h2>Piano</h2>
+                    </span>
+                </span>
+                <img class="img-fluid" src="http://3.bp.blogspot.com/-5944afiERy0/WF5jbw5IP-I/AAAAAAAAAuQ/YPyMPadLzbcjMXzQK5zkCeDtq2nBOZYIACHM/s1600/piano-wallpapers-wallpaper-cave.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="{{ url_for('ukulele') }}">
+                <span class="caption">
+                    <span class="caption-content">
+                    <h2>Ukulele</h2>
+                    </span>
+                </span>
+                <img class="img-fluid" src="https://wallpapercave.com/wp/wp2159758.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="{{ url_for('show_all_categories') }}">
+                <span class="caption">
+                    <span class="caption-content">
+                    <h2>Nhiều Khóa học thú vị khác nữa</h2>
+                    <p class="mb-0">... đang chờ đón bạn ở Learn It All. Bắt đầu tìm kiếm đam mê của chính mình tại đây!</p>
+                    </span>
+                </span>
+                <img class="img-fluid" src="http://getwallpapers.com/wallpaper/full/b/f/c/778933-music-instruments-wallpaper-1920x1080-for-iphone-5s.jpg" alt="">
+                </a>
+            </div>
+            </div>            
+            </div>
+        </div>
+    </section>
+    <div class="d-flex justify-content-center">
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

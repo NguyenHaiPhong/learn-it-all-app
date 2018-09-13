@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://wallpapertag.com/wallpaper/full/0/6/4/93178-cool-basketball-wallpaper-1920x1080-for-samsung.jpg" class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Giới thiệu về bóng rổ</h1>
+            <h2>Giới thiệu</h2>
+                <p>
+                    Bóng rổ là môn thể thao thi đấu đối kháng trực tiếp giữa 2 đội, mỗi đội có năm người trên sân. Mục đích của trận đấu là nhằm ghi nhiều điểm bằng cách cố gắng đưa bóng vào rổ đối phương một cách đúng luật và hạn chế không cho đối phương ném bóng vào rổ mình. Bóng rổ là một trong 
+                    những môn thể thao thịnh hành và được ưa chuộng nhất ở Hoa Kỳ, Trung Quốc, Canada, Philippines,…
+                </p>
+            <h2>Nguồn gốc</h2>
+                <h3>Nguyên nhân</h3>
+                    <p>
+                        Bóng rổ ra đời năm 1891 do tiến sĩ James Naismith (1861-1936) – một giáo viên môn giáo 
+                        dục thể chất ở học viện Springfield thuộc bang Massachusetts (Hoa Kỳ) sáng tạo ra.
+                        <br>
+                        Vào thời gian đó các môn thể thao, trò chơi vận động chủ yếu được thực hiện ngoài trời. 
+                        Do vậy, trong suốt mùa đông các sinh viên đã không thể tập luyện hay thi đấu được. Các giáo 
+                        viên thể dục rất băn khoăn, lo lắng và không ngừng tìm tòi, suy nghĩ để tìm ra một môn chơi 
+                        mới. Bóng rổ ban đầu chỉ là trò chơi vận động cho sinh viên trong thời tiết xấu.
+                        <br>
+                        Ban đầu Naismith tính xây dựng dựa trên môn bóng đá Mỹ - American Football và lacrosse 
+                        nhưng ý tưởng đó đã sớm bị loại bỏ vì ông cho rằng bóng đá Mỹ quá thô bạo, còn môn kia chủ yếu dựa trên khả năng sức mạnh tốc độ, không có tính nghệ thuật.
+                        <br>
+                        Điều kiện 
+                        để hình thành môn mới này là phải được chơi trong nhà thể dục, 
+                        phải giới hạn bởi nhiều luật lệ nhưng đơn giản và dễ hiểu, không được dùng que gậy vì dễ gây 
+                        nguy hiểm và không được thô bạo hay có những động tác truy cản theo kiểu môn bóng đá Mỹ. Do đó, ông 
+                        đã chọn quả bóng đá và sử dụng tay để chuyền, bắt và ném.
+                    </p>
+                <h3>Bảng và rổ</h3>
+                    <p>
+                        Về hình thành "rổ" và "bảng" như hiện nay, đã có nhiều tài liệu đề cập và giải thích.
+                        <br>
+                        Ví dụ như trong sách bóng rổ của Iu. M. Portnova thì cho rằng Naismith (ông) đã ứng dụng 
+                        môn chơi Pok-Tapok – ném bóng vào một vòng tròn bằng đá được đính trên tường cao của bộ 
+                        lạc Inka va Maia sống tại Mehico và môn chơi nổi tiếng Ollamalituli của người Astek cũng 
+                        với mục đích ném bóng cao su vào một chiếc vòng làm bằng đá.
+                        <br>
+                        Nhưng theo sách "Basketball" của Joe Hutton và Vern B. Hoffman đã giải thích theo luận 
+                        lý của vấn đề là ông dự định làm cầu môn theo môn Lacrosse nhưng nếu các cầu thủ tập 
+                        trung trước cầu môn để tranh cướp và ném bóng sẽ dẫn đến thô bạo, do vậy ông đặt hai cái 
+                        hộp ở 2 đầu sân và bóng sẽ được ném vào đó. Nhưng điều này lại nảy sinh một vấn đề khác là hàng phòng thủ đứng tụm quanh hộp để chặn bóng. Do vậy ông quyết định treo hai cái hộp trên đầu các đấu thủ sao cho họ không thể với tới được. Điều này ép họ phải bung rộng ra khống chế các quả ném từ vòng ngoài. Vào thời đó ông cho treo hai cái giỏ đựng đào trên ban công của nhà thể dục Sprìngfield ở độ cao 10feet (3,05m) tính từ mặt sân tới cạnh trên của vòng rổ (độ cao được giữ đến bây giờ).
+                        <br>
+                        Bảng rổ được hình thành trong quá trình thi đấu sau này vì khi thi đấu, các cổ động 
+                        viên cuồng nhiệt đứng trên bao lơn đã cố gắng giúp đỡ đội mình bằng cách phụ hất bóng 
+                        vào rổ đối phương. Do đó ông đã zcho đặt thêm bảng (1895) ở phía sau nhằm mục đích bảo vệ. 
+                        Điều tiếp theo là cách thức để bắt đầu một trận đấu, ông đã dựa trên môn bóng bầu dục Anh 
+                        – khi có tranh chấp, trọng tài sẽ ném bóng vào giữa 2 hàng cầu thủ để họ lao vào tranh 
+                        cướp. Luật này tuy thô bạo nhưng công bằng cho cả hai bên. Do đó các vòng tròn nhảy tranh 
+                        bóng được lập ra. Tiếp theo Ông viết 13 điều luật cơ bản.
+                        <br>
+                        Ngay sau đó toàn bộ giáo viên và sinh viên trong trường đã ngưng hoạt động để xem lớp 
+                        của ông thi đấu trận bóng rổ đầu tiên trên thế giới. Tên môn chơi là "Basketball" 
+                        (bóng rổ) được học sinh lớp ông đề nghị đã được chấp nhận.
+                        <br>
+                        Các loại "rổ" được sử dụng trong môn bóng rổ hiện nay bao gồm rổ được đặt cố định với 
+                        bảng và người chơi không thể điều chỉnh được độ cao thấp. Hệ thống bảng rổ này được sử 
+                        dụng trong nhà thi đấu, khoảng trống rộng rãi ở ngoài trời. Ngoài ra, còn có thêm hệ 
+                        thống rổ và bảng giúp người chơi có thể điều chỉnh được để đáp ứng tối đa nhu cầu của 
+                        mọi lứa tuổi, giúp người chơi trải nghiệm tối đa chơi bóng, cải thiện kỹ năng chơi bóng rổ.
+                    </p>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('esport') }}"class="btn btn-primary">Quay lại ESport</a>
+        <a href="{{ url_for('basic_learning_basketball') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+</body>
+{% include "homepage/footer.html" %}
+</html>

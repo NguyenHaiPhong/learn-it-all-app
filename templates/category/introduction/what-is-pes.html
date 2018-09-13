@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {% include "page/meta-data.html" %}
+
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="../../../static/image/Esport/PES/PES-2018.jpg" class="img-thumbnail"></div>
+            <h1 class="text-center mt-4">Pro Evolution Soccer</h1>
+                <h2>Giới thiệu</h2>
+                <p class="f-milu">
+                    <br>
+                    Pro Evolution Soccer (World Soccer: Winning Eleven hoặc Winning Eleven) hay được gọi một cách thông dụng là
+                    PES hoặc Pro Evo là một thể loại game thể thao điện tử về bóng đá của Konami và là dòng game kế nhiệm của 
+                    serie International Superstar Soccer.
+                    Hàng năm, game được phát hành vào cuối tháng 9 hoặc đầu tháng 10 dưới cái tên Winning Eleven ở Nhật Bản và Pro Evolution Soccer cho toàn cầu.
+                    <br>
+                    Những nhân vật nổi tiếng trong làng bóng đá như trọng tài Pierluigi Collina, các danh thủ Zico, Thierry Henry, Francesco Totti, John Terry, Adriano, Michael Owen, Gianluigi Buffon, Didier Drogba, Luca Toni, Fernando Torres, Mario Gotze, Neymar, Alvaro Morata, Cristiano Ronaldo, Lionel Messi..v.v.. 
+                    đã từng là gương mặt đại diện cho thương hiệu Pro Evolution Soccer trên bìa đĩa.
+                    <br>
+                    Tháng 12/2011, thương hiệu Pro Evolution Soccer có sẵn 19 ngôn ngữ và được phát hành tại 62 quốc gia khác nhau.
+                    <br>
+                    Tháng 12/2012, tựa game bán được 81,65 triệu bản trên toàn cầu, trở thành một trong những tựa game bán chạy nhất thế giới.
+                    <br>
+                    Tại Việt Nam, Pro Evolution Soccer được biết đến với cái tên PES hoặc Winning Eleven (WE) hoặc Bóng Nhật và được du nhập vào nước ta từ rất sớm và sau hơn 15 năm đã trở thành tựa game console ăn khách nhất.
+                    <br>
+                    Đã từ rất rất lâu, kể từ khi tôi còn là một cậu bé học lớp 2, khái niệm “Bóng Đá Nhật” đã trở thành một thứ gì đó quá đỗi quen thuộc với những người mê game tại Việt Nam. “Trớ trêu” thay, vào thời kỳ máy tính chưa bùng nổ, internet cũng chưa có, thì những cậu bé với tình yêu gần như vô hạn cho hai thứ:
+                    Trò chơi điện tử và bóng đá, thứ được thừa kế từ những người ông, những người cha của chúng ta khiến cho tựa game bóng đá do Konami phát triển này trở thành một sản phẩm được ưa chuộng bậc nhất ngay từ những ngày đầu PlayStation xuất hiện tại dải đất hình chữ S.
+                    Những game thủ 8x hay 9x đời đầu chắc chắn sẽ chẳng thể nào quên được cái tên Winning Eleven. Phiên bản đầu tiên, lấy tên World Soccer Winning Eleven được ra mắt vào năm 1996, 2 năm sau khi cỗ máy chơi game mang tính cách mạng của PlayStation được ra mắt. Đó là những gì game thủ Việt sau khi tìm hiểu 
+                    thông tin về dòng game họ đam mê nhận được.
+                    <br>
+                    Thế nhưng một phiên bản Winning Eleven thậm chí còn được ra mắt trước cả phiên bản Quốc tế. Đó là tựa game cùng tên vào năm 1995, thế nhưng chỉ được phát hành tại thị trường nội địa Nhật Bản. Bản thân tựa game cũng chẳng hề phù hợp với việc “xuất khẩu”, vì Winning Eleven 1995 chỉ toàn những câu lạc bộ
+                    bóng đá Nhật Bản đang thi đấu tại giải quốc nội J League.
+                    Như vậy là Goal Storm, tên tại thị trường Nhật Bản là World Soccer Winning Eleven được ra mắt tại Nhật vào ngày 15/03/1996 tại Nhật Bản, và 22/12/1996 tại Bắc Mỹ. Sở dĩ ở thời điểm hiện tại, chúng ta dường như chẳng hề biết tới cái tên Goal Storm hay ISS Pro, tên tại thị trường châu Âu của “Bóng Đá Nhật”,
+                    là do hầu hết những cỗ máy PlayStation tại Việt Nam đều được nhập về từ xứ sở Hoa anh đào, và cũng vì lý do đó, Winning Eleven đã trở thành cái tên quá đỗi quen thuộc đối với chúng ta.
+                    May mắn thay, đến thời điểm hiện tại khi PES 2016 đã ra mắt chính thức, các fan hâm mộ dòng game bóng đá Nhật Bản bắt đầu thấy được tín hiệu đáng mừng từ phía giới chuyên môn khi điểm số thấp nhất mà trò chơi nhận được tính đến thời điểm bài viết là 8/10, còn lại đều từ 9/10 trở lên. GameSpot - trang tin 
+                    game uy tín đưa ra nhận xét tổng quan đầu tiên trước bài review chi tiết: "Sự trở lại của nhà vua". Điều này phần nào thể hiện chất lượng tốt của PES 2016.        
+                    <br>
+                    Ngay lập tức, tựa game ra mắt năm 96, cùng thời điểm với kỳ Euro được tổ chức tại Anh Quốc nhận được điểm số rất cao, từ 8.5 đến 9 theo thang điểm 10 từ hai người đánh giá đến từ tạp chí Electronic Gaming Monthly. Giao diện thân thiện, cách chơi đầy mới mẻ cùng AI đầy thử thách.
+                    Có thể khẳng định rằng, sau gần 20 năm có mặt tại Việt Nam, mặc cho những tựa game như FIFA đã và đang thu hút được nhiều game thủ Việt, PES vẫn sẽ là một trong số những game được yêu thích nhất tại làng game Việt trong tương lai gần.
+                    <br>
+                    Hiện nay tại Việt Nam có rất nhiều Gamer nổi tiếng đã có nhiều thành tích đáng kể ở cấp Châu Lục và khu vực như: Quân Bi, Quang Barca...
+                </p>
+                <p>
+                    Đọc đến đây chắc các bạn sẽ thắc mắc là làm thế nào để có thể trở thành 1 gamer đẳng cấp để đi "du đấu" quốc tế chưa nhỉ?
+                </p>
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('esport') }}" class="btn btn-primary">Quay lại ESport</a>
+        <a href="{{ url_for('basic_learning_pes') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %} 
+</body>
+</html>

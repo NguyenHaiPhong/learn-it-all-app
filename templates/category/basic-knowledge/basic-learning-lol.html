@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>League Of Legends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {%include "page/meta-data.html" %}
+  
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://cn.pling.com/img/c/b/4/9/72ccdfc9877a41431c0021c72d05ab610288.jpg" 
+            class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Liên Minh Huyền Thoại nhập môn</h1>
+            <h2>Cách chơi</h2>
+            <p>
+                Liên Minh Huyền Thoại là một trò chơi đấu trường trận chiến trực tuyến nhiều người chơi (MOBA) mà người chơi có thể điều khiển một 
+                "tướng" để đối đầu với một đội những người chơi khác hoặc các trận đấu với máy. Tính đến tháng 6 năm 2018, có tổng cộng 141 vị tướng 
+                khác nhau được phân loại theo vai trò là sát thủ, đấu sĩ, đỡ đòn, xạ thủ, pháp sư hay hỗ trợ.
+                <br>
+                Người chơi lên cấp độ bằng cách hạ gục các tướng của phe địch được điều khiển bởi người chơi khác hoặc đối thủ máy, cũng như các quân 
+                lính liên tục xuất hiện trong trò chơi, hay tấn công trụ của phe địch. Trong chế độ chơi truyền thống, bản đồ được chia ra thành ba 
+                đường chính là đường đi của quân lính; khu rừng là khoảng giữa các đường, nơi có các bãi quái rừng; và khu vực nhà chính nơi người 
+                chơi xuất hiện và mua trang bị. Các đường chính bao gồm đường trên, đường giữa và đường dưới, phù hợp với các kiểu tướng nhất định. 
+                Đôi khi khu rừng cũng được coi là một đường (đường rừng), với những người chơi tướng đi rừng sẽ rảo quanh các bãi quái rừng để thu 
+                thập các bùa lợi và hỗ trợ cho các đường chính khác. Người chơi nhận được một lượng tiền nhỏ theo thời gian, và có thể kiếm nhiều tiền 
+                hơn từ việc giết quân lính địch bằng đòn đánh kết liễu, phá hủy trụ địch, giết quái vật rừng cũng như giết tướng địch, hỗ trợ đồng đội 
+                giết tướng địch và phá trụ. Với số tiền này, người chơi mua các trang bị cho tướng của mình để các tướng mạnh mẽ hơn trong suốt trận đấu. 
+                Trong các bản đồ Summoner's Rift, Twisted Treeline, The Crystal Scar và Howling Abyss, trò chơi kết thúc khi một đội phá hủy được nhà 
+                chính của đội kia, hoặc là đội kia đầu hàng. Các bản đồ khác có luật chơi và mục tiêu khác nhau, chẳng hạn nhà chính ở Crystal Scar 
+                sẽ mất máu nếu đội đối phương kiểm soát ít nhất 3 trong 5 trụ quanh bản đồ. Tuy nhiên, bản đồ The Crystal Scar đã bị đóng lại vĩnh viễn 
+                vào ngày 22/2/2016 với lý do các tướng trong chế độ chơi này bị mất cân bằng quá lớn về kĩ năng lẫn các chỉ số và lối chơi. Hơn nữa, hầu 
+                như không có ai chơi chế độ này - chỉ 0,5% trong tổng số hơn 40 triệu người chơi trên toàn thế giới chơi nó.
+                <br>
+                Cửa hàng của trò chơi Liên Minh Huyền Thoại cho phép người chơi mua vật dụng bằng "điểm Riot" (Riot Points – RP) và "điểm ảnh hưởng" 
+                (Influence Points – IP). RP phải mua bằng tiền thật, còn IP kiếm được từ mỗi trận đấu của trò chơi hoặc được thưởng từ các sự kiện khác. 
+                Từ năm 2018, IP chuyển thành "Tinh hoa Lam" (bản tiếng Anh goi là "Blue Essence" - BE).
+                <br>
+                Người chơi được coi là một "triệu hồi sư" (Summoner) và giữ vai trò lâu dài trong suốt trò chơi. Các thống kê và điểm số của người chơi 
+                được lưu giữ và có thể xem được. Người chơi nhận được điểm kinh nghiệm sau mỗi trận đấu họ tham gia. Người chơi nhận được điểm kinh nghiệm 
+                đến cấp độ 30. Cho đến ngày 8/11/2017, giới hạn cấp độ bị loại bỏ. Người chơi có thể kiếm điểm kinh nghiệm và thăng cấp, mỗi một cấp tăng 
+                lên người chơi có thể nhận được phần thưởng là Tinh hoa Lam, thứ đã được thay thế cho IP (Điểm ảnh hưởng) và được sử dụng trong cửa hàng 
+                cũng như Chế Tạo Hextech.
+                <br>
+                Đây là một game Play-to-win bởi vì hệ thống ngọc và tướng đều được mua bằng IP Cũng bắt đầu từ ngày 8/11/2017, hệ thống Ngọc và Bảng Bổ trợ từ mùa 7 bị xóa bỏ hoàn toàn. Hệ thống trước-trận (before-game) mới này được gọi là Ngọc Tái Tổ Hợp được sử dụng vào mùa giải xếp hạng thứ 8. Người chơi có thể chọn bảng ngọc gồm hai hệ Chính và Phụ, mỗi hệ có thể chọn trong 5 hệ là Kiên Định, Cảm Hứng, Áp Đảo, Pháp Thuật và Chuẩn Xác. Sau khi chọn hệ chính, người chơi có thể chọn 1 trong 3 ngọc Siêu Cấp của hệ chính đó, tiếp theo chọn 3 trong 9 ngọc phụ của hệ, với ba nhánh khác nhau. Sau khi thiết lập hệ chính, người chơi có thể chọn 1 hệ phụ trong 4 hệ còn lại và chọn 2 trong 9 ngọc phụ của hệ phụ đó. Kết hợp hai hệ người chơi còn có thêm thuộc tính thưởng thêm phụ thuộc vào hệ chính. 
+                Ngọc Tái Tổ Hợp miễn phí với tất cả người chơi và không yêu cầu cấp độ để sử dụng, các Phép Bổ trợ vẫn được giữ nguyên.
+                </p>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('esport') }}"class="btn btn-primary">Quay lại ESport</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

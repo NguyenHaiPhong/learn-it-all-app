@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+            <div class="container mt-4 d-flex justify-content-center"><img src="https://images8.alphacoders.com/915/915600.jpg" class="img-thumbnail" ></div>
+        <h1 class="text-center mt-4">Tìm hiểu về Hearthstone</h1>
+            <h2>Giới thiệu</h2>
+                <p>
+                        Hearthstone - Heroes of Warcraft là tựa game mới được trình làng bởi Blizzard. Công bố vào tháng 3 năm 2013, qua các giai đoạn 
+                    thử nghiệm thành công rực rỡ, game đã chính thức được phát hành vào ngày 11/03/2014. Là một game free-to-play nên mọi người đều 
+                    có thể chơi Hearthstone và đạt được bộ sưu tập bài như nhau, tuy nhiên nếu sử dụng tiền thật thì công đoạn sưu tầm bài sẽ nhanh 
+                    hơn rất nhiều.
+                    <br>
+                    Hearthstone là tựa game được xuất bản trên hệ máy PC và gần đây nhất đã xuất hiện trên iPad. Hearthstone cho Android và iPhone 
+                    vẫn đang trong giai đoạn phát triển và dự tính sẽ hoàn thành vào đầu năm 2015.
+                    <br>
+                    Hearthstone nhanh chóng trở thành cơn bão và khiến cho bất cứ một nhà phát hành game nào khác trên thế giới phải ganh tỵ bởi sự phát 
+                    triển khủng khiếp của mình. Chỉ qua 6 tháng phát hành, Hearthstone đã đạt mốc trên 20 triệu tài khoản riêng biệt, và dù là game 
+                    free-to-play, doanh thu từ bán đồ trong game của Hearthstone đã đứng top 10 các game có doanh thu cao nhất thế giới năm 2014.
+                </p>
+            <h2>Cách chơi</h2>
+                <p>
+                    Được phát hành bởi Blizzard nên Hearthstone cũng là một bản phác họa lại thế giới Warcraft. Người chơi có thể chơi với máy (AI) 
+                    hoặc những người chơi khác. Mục đích của trò chơi là tiêu diệt Hero của đối thủ thông qua sử dụng phép thuật (spell) và quái vật (minion). 
+                    Bên cạnh đó một số Hero còn có thể trang bị cho mình vũ khí để tấn công.
+                    <br>
+                    Hearthstone là một game được thiết kế với mục đích tạo ra một card game đơn giản, chơi nhanh và để lại nhiều niềm vui cho người 
+                    chơi nhưng dần dần Hearthstone đang trở thành một eSport mới với nhiều giải thưởng lớn vô cùng hấp dẫn, lên tới hàng trăm nghìn 
+                    dollar.
+                    <br>
+                    Hiện tại, Hearthstone có gần 500 lá bài để người chơi có thể thu thập và con số này tiếp tục tăng lên trong thời gian tới. 
+                    Người chơi có thể có được cho mình những lá bài đó bằng cách mua pack bằng tiền mặt hoặc tiền trong game, kiếm được bằng cách 
+                    thi đấu thắng những người chơi khác và làm nhiệm vụ hàng ngày.
+                    <br>
+                    Tất cả các Hero và các lá bài trong game đều lấy từ thế giới Warcraft nên game sẽ rất thân quen những fan của Warcraft Series, 
+                    World of Warcraft hay thậm chí là DotA 1. Cộng đồng những người chơi Hearthstone tại Việt Nam cũng đang phát triển nhanh chóng,
+                    khiến Hearthstone dần dần trở thành một game không thể bỏ qua trong thời gian này
+                </p>
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('esport') }}" class="btn btn-primary"><p>Quay lại ESport</p></a>
+        <a href="#" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary"><p>Trang chủ</p></a>
+    </div>
+    {% include "homepage/footer.html" %}  
+</body>
+</html>

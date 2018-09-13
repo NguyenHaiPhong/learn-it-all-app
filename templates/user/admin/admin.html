@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["admin_signed_in"] == True %}
+    {% include "homepage/admin-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <section class="mt-0 callout">
+            <div class="container text-center">
+                <h2 class="mx-auto mb-5">Xin chào quản trị viên</h2>
+            </div>
+            <div class="d-flex flex-column justify-content-around align-items-center">
+                <a class="my-3 btn btn-primary btn-xl btn-lg" href="{{ url_for('admin_show_all_courses') }}">Xem danh sách các khoá học</a>
+                <a class="my-3 btn btn-primary btn-xl btn-lg" href="{{ url_for('admin_show_all_customers') }}">Xem danh sách người dùng</a>
+                <a class="my-3 btn btn-primary btn-xl btn-lg" href="{{ url_for('admin_show_all_lecturers') }}">Xem danh sách giảng viên</a>
+                <a class="my-3 btn btn-primary btn-xl btn-lg" href="{{ url_for('admin_show_all_orders') }}">Xem danh sách yêu cầu</a>
+            </div>
+    </section>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

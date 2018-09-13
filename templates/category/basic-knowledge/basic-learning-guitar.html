@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>League Of Legends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {%include "page/meta-data.html" %}
+  
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://i2.wp.com/www.stunningmesh.com/wp-content/uploads/2011/12/awesome-guitar-wallpapers-designs-large-3.jpg?ssl=1" 
+            class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Guitar nhập môn</h1>
+        <p>       
+            Bạn là người có niềm đam mê đặc biệt với đàn guitar, thích ngồi đàn hát vu vơ, solo các bản tình ca lãng mạn hay đệm hát rình rang cho nguyên một nhóm bạn vui chơi,... Tuy nhiên bạn không biết nên bắt đầu học guitar như thế nào? Học guitar có khó không? Bao lâu thì sẽ biết chơi guitar?... và nhiều vấn đề về guitar khác nữa
+            Do đó bài viết hôm nay mình muốn đưa ra những giải đáp cho những thắc mắc của các bạn về đàn guitar để những người chưa biết gì về đàn guitar có cái nhìn tổng quan nhất trước khi bắt đầu học guitar.
+        </p>
+        <h2>
+            Thứ nhất: Nên bắt đầu học guitar bằng cây đàn như thế nào? Đàn dây sắt và dây nylon có gì khác nhau không?
+        </h2>
+        <p>
+            Bạn thấy có khá nhiều loại đàn guitar khác nhau với các mức giá cũng khá đa dạng từ vài trăm nghàn đồng đến vài nghàn đô. Vậy tại sao chúng lại có giá khác nhau như vậy? Đó là do chất liệu kỹ thuật và công nghệ làm nên những cây đàn guitar này rất khác nhau. Vậy mới chơi thì mua đàn guitar loại nào? Bạn không cần phải mua đàn guitar thật mắc tiền khi mới bắt đầu bạn có thể mua đàn guitar giá rẻ cũng được nhưng điều quan trọng chúng phải đảm bảo đạt chuẩn âm thanh. 
+            Đây là yếu tố quyết định tới khả năng phát triển guitar của bạn sau này.
+            Bạn thường thấy có cây đàn guitar thì dây sắt, có cây đàn guitar thì dây nylon? Vậy tại sao chúng lại cấu tạo như vậy?
+            <br>
+            Đàn guitar dây nylon hay còn gọi đàn guitar Classic dùng để chơi nhạc cổ điển hay gọi là solo,nhạc không cần người hát, nhạc không lời. Đặc điểm của loại nhạc này là trầm ấm lắng đọng vì thế cây đàn guitar classic sẽ có cấu tạo tương ứng với những yêu cầu đó. Chính là: sử dụng dây nylon, cần đàn 12 phím, cần đàn lớn.
+            Đàn guitar dây sắt hay còn gọi đàn guitar modern dùng để đệm hát hay chơi nhạc trẻ hiện giờ ah. Đặc điểm của dòng nhạc này là hào hứng và sôi động vì thế nó cần am thanh phải lớn và vang.  Chính vì vậy mà loại đàn guitar acoustic dùng:  dây sắt, cần đàn có 14 phím,  cần đàn nhỏ.
+            Đó là những đặc điểm chính để bạn phân biệt được đàn guitar Classic và đàn guitar modern. Đó cũng là cách giúp bạn chọn được đàn guitar thích hợp với dòng nhạc mình đang theo học.
+            Vậy nên bắt đầu bằng việc học guitar classic hay guitar acoustic đây?
+            <br>
+            Về độ khó thì bạn học đàn guitar acoustic( guitar modern) thì dễ hơn vì chỉ đơn giản là đệm hát vì thế không cần đến những kỹ thuật khó khăn hay những nốt nhạc phức tạp mà điều đơn giản là bạn chỉ cần biết hợp âm là bạn có thể đệm hát thoải mái rồi. Điều này sẽ giúp cho bạn học dễ dàng hơn vì thế sẽ không gây chán nản lúc ban đầu. Tuy nhiên nếu bạn nào chịu khó thì học guitar classic từ ban đầu học khó khăn hơn nhưng bù lại được một điều là nếu bạn chơi được guitar classic thì đệm hát chỉ là chuyện nhỏ thôi! Hihi!
+            <br>
+            Nếu bạn muốn biết chi tiết hơn bạn có thể xem tại bài viết: Cách phân biệt đàn guitar classic và accoustic
+        </p>
+        <h2>
+            Thứ hai: Mới học guitar thì nên học gì đầu tiên?
+        </h2>
+        <p>
+            Bạn hãy học thật chậm rãi và kiên trì. Thời gian ban đầu học guitar có thể nói là thời gian khó khăn nhất với bất kỳ ai kể cả người học guitar classic hay guitar modern. Các vấn đề mà bạn thường gặp phải đó là đau tay, các ngón tay bị dộp và bong tróc da. Không những thế khi bạn mới học việc nhớ nốt nhạc, nhớ vị trí bấm nhiều khi làm bạn thất vọng. Chính vì thế nhiều bạn cũng bỏ cuộc từ đây.
+            <br>
+            Hãy xác định niềm đam mê hay động lực nào mà bạn học guitar có thể vì: Yêu thích hay để giải trí hay thậm chí là cưa gái. Hãy giành sự tâm huyết và niềm đam mê để vượt qua nhé.
+            <br>
+            Và khi học guitar bạn cứ học luyện ngón là điều đầu tiên. Bạn hãy học cách bấm nốt, cách bấm vị trí các nốt trên cần đàn guitar trước khi học những thứ cao siêu hơn nhé.
+        </p>
+        <h2>
+            Thứ ba: Vậy có bí quyết hay phương pháp nào để học guitar thành công hay không?
+        </h2>
+        <p>
+            Câu trả lời là có, bạn muốn thành công bất cứ vấn đề gì không chỉ là học guitar bạn đều phải có một phương pháp. Vậy phương pháp học guitar thành công là gì?       
+            Đó chính là bản thân của bạn. Sự kiên trì, ý chí và quyết tâm của ban. Học guitar không khó chỉ cần bạn chăm chỉ tập luyện là sẽ thành công.
+            <br>
+            Có câu nói sau: "Nhân tài được hình thành từ 99% cần cù và 1% là tài năng".
+            Hãy kiên trì khổ luyện thì sẽ thành công thôi nhé.
+        </p> 
+        <h2>
+            Thứ tư: có bạn hỏi theo nhạc lý đã học thì chỉ có 7 nốt nhạc chính là: Đô, Rê, Mi, Fa,Sol,La,Si. Vậy sao đàn guitar có 6 dây sao mà đánh đây?
+        </h2>
+        <p>
+            Thực ra 6 dây trên đàn guitar là 6 dân buông(tức là gãy dây không cần bấm phím) tương ứng là : Mì, Là, Rê,Sol, Si, Mí  theo thứ tự từ trên xuống dưới ( dây lớn nhất đến dây nhỏ nhất). Cụ thể dưới đây:
+            Vậy các nốt nhạc còn lại thì bấm làm sao trên cây đàn guitar?
+            <ul>
+                <li>Nốt Đô: Bấm ngăn số 3 dây số 5.</li>
+                <li> Nốt Mi: Bấm dây số 4 ngăn số 2.</li>
+                <li>Nốt Fa: Bấm dây số 4 ngăn số 3.</li>
+                <li>Nốt La: Bấm dây số 3 ngăn số 2.</li>
+                <li>Nốt Đô: Bấm dây số 2 ngăn số 1.</li>        
+            </ul>
+        </p>
+        <h2>
+            Thứ bốn: có bạn hỏi nếu dùng dây nylon thay vào đàn guitar acoustic thì nó có thành đàn guitar classic hay không?
+        </h2>
+        <p>
+            Về nguyên lý sử dụng dây thì nó vẫn thế, bạn vẫn hoàn toàn lắp được tuy nhiên âm thanh nó sẽ không vang như dây sắt thôi và tất nhiên bạn có thể hiểu như thế này. “Đàn ông có thể mặc váy tuy nhiên nó không giống ai thôi”. Tuy nhiên, nếu bạn thay dây sắt và đàn guitar classic thì không có sự thay đổi là mấy âm thanh phát ra sẽ không khác gì mấy so với guitar acoustic.
+        </p>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('esport') }}"class="btn btn-primary">Quay lại ESport</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

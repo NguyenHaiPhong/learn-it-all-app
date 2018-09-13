@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="/static/image/Esport/Dota 2/dota2-thumbnail.jpg" 
+            class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Hướng dẫn chơi Dota 2 cơ bản</h1>
+            <h2>Giới thiệu về các thuộc tính của Heroes</h2>
+                <p>
+                    Thuộc tính (Attributes) là các chỉ số cơ bản của mọi tướng trong Dota 2. Những thuộc tính này là Sức mạnh (Strength), 
+                    Nhanh nhẹn (Agility) và Trí tuệ (Intelligence). Thuộc tính được tăng lên khi tướng lên cấp, nâng cấp cái nhánh Tài năng 
+                    (Talent), mua các Trang bị (Item) hoặc sử dụng các Kĩ năng (Skill). Các phân thân do tướng tạo ra được hưởng 
+                    lợi từ các thuộc tính.
+                    <br>
+                    Mỗi tướng đều có một thuộc tính chính, và sát thương tướng đó gây ra phụ thuộc vào thuộc tính đó. Mỗi điểm vào thuộc tính 
+                    chính tăng một sát thương mà tướng đó có thể gây ra. Thuộc tính có vai trò quyết định trong việc tướng đó chơi ra sao và nhận vai trò 
+                    nào. 
+                </p>
+                <table style="border: solid black 1px">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nhanh nhẹn (Agility)</td>
+                            <td>Sức mạnh (Strength)</td>
+                            <td>Trí tuệ (Intelligence)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Mỗi điểm nhanh nhẹn tăng 0.14 giáp.</li>
+                                    <li>Mỗi điểm nhanh nhẹn tăng 1 tốc độ đánh.</li>
+                                    <li>Tướng thuộc loại nhanh nhẹn tăng 1 sát thương khi nhận thên 1 điểm nhanh nhẹn.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Mỗi điểm sức mạnh tăng 19 máu.</li>
+                                    <li>Mỗi điểm sức mạnh tăng 0.03 hồi máu mỗi giây.</li>
+                                    <li>Tướng thuộc loại sức mạnh tăng 1 sát thương khi nhận thêm 1 điểm sức mạnh.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Mỗi điểm trí tuệ tăng 13 năng lượng.</li>
+                                    <li>Mỗi điểm trí tuệ tăng 0.04 hồi năng lượng mỗi giây.</li>
+                                    <li>Tướng thuộc loại trí tuệ tăng 1 sát thương khi nhận thêm 1 điểm trí tuệ.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>    
+                <br>
+            <h2>Phân loại các Heroes Dota 2</h2>
+                <p>
+                    Mỗi tướng trong trò chơi có các vai trò khác nhau trong trận đấu. Tuỳ thuộc vào thuộc tính của tướng 
+                    đó, các trang bị và lối chơi của người chơi, vai trò của tướng có thể tuỳ biến trong suốt trận đấu.
+                </p>
+                <h3>Phân loại chính</h3>
+                    <h4>Carry</h4>
+                        <p>
+                            &#34Sẽ trở nên mạnh mẽ vào giai đoạn cuối trận đấu nếu có đủ lượng vàng cần thiết&#34.
+                            <br>
+                            Đây là các tướng có khả năng gây sát thương bằng các đòn đánh thường rất khủng khiếp nếu như đạt được cấp độ và các trang bị nhất định, tuy nhiên các tướng này khá yếu 
+                            ở đầu và giữa trận, yêu cầu tiêu diệt lính rất nhiều để có thể có được những trang bị từ cơ bản đến nâng cao. 
+                            Điển hình như: 
+                        </p>
+                    <h4>Support</h4>
+                        <p>
+                            &#34Không cần chú trọng vào việc kiếm vàng và trang bị, thay vào đó sử dụng kĩ năng của tướng để giành lợi thế cho team&#34.
+                            <br>
+                        </p>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('esport') }}"class="btn btn-primary">Quay lại ESport</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+</body>
+{% include "homepage/footer.html" %}
+</html>

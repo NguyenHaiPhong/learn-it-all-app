@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+    <link rel="stylesheet" href="../../../static/css/table.css">
+</head>
+
+<body>
+    {% if session["admin_signed_in"] == True %}
+    {% include "homepage/admin-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+	{% endif %}
+	<div class="mt-4">
+			<h1 class="text-center">Xem danh sách các yêu cầu</h1>
+		</div>
+	<div id="page-wrap">
+		<div class="d-flex justify-content-center">	
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Người yêu cầu</th>
+						<th>Tên khoá học</th>
+						<th>Mức độ</th>
+						<th>Thời gian</th>
+						<th>Phê duyệt yêu cầu</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for order in all_orders %}
+						<tr>
+							<th>{{ loop.index }}</th>
+							<th>{{ order.customer_id.name }}</th>
+							<th>{{ order.course_id.name }}</th>
+							<th>{{ order.course_id.level }}</th>
+							<th>{{ order.order_time }}</th>
+							{% if order.is_purchased == True %}
+								<th>Đã phê duyệt</th>
+							{% else %}
+								<th><a href="{{ url_for('admin_accept_orders', order_id = order.id) }}">Chấp thuận</a></th>
+							{% endif %}
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>	
+	</div>
+	{% include "homepage/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <h1 class="mt-4 text-center">Nội dung khoá học</h1>
+    <div class="mt-4 container bootstrap snippet">
+        <div class="panel-body inf-content">
+            <div class="row">
+                <div class="col-md-5">
+                    <img alt="" style="width:500px; height:400px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ course.thumbnail }}" 
+                    data-original-title="Usuario"> 
+                </div>
+                <div class="col-md-5">
+                    <div class="mb-0 table-responsive">
+                    <table class="table table-condensed table-responsive table-user-information">
+                        <tbody>
+                            <tr>    
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-user text-primary"></span>    
+                                        Tên khoá học                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ course.name }}     
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                        Mức độ                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ course.level }}  
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                            Mô tả chi tiết                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ course.description }} 
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                            Các bài học                                               
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    <ul>
+                                        {% for lesson in all_lessons %}
+                                        <li>{{ lesson.name }}</li>
+                                        <br>
+                                        {% endfor %}
+                                    </ul> 
+                                </td>
+                            </tr>    
+                        </tbody>
+                    </table>
+                    </div>
+                    <br>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center mb-2">Video bài học</h1>
+    {% for video in list_videos %}
+        {% for video_title, video_id in video.items() %}
+        <div class="mb-2 container d-flex flex-column align-items-center">
+            <h2 class="text-center">{{ video_title }}</h2>
+            <br>
+            <iframe width="850" height="600" 
+            src="https://www.youtube.com/embed/{{ video_id }}" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+            </iframe>
+        </div>
+        {% endfor %}
+        <hr>
+        <br>
+    {% endfor %}
+    {% include "homepage/footer.html" %} 
+</body>
+</html>

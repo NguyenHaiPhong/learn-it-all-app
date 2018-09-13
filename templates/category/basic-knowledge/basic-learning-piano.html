@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>League Of Legends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {%include "page/meta-data.html" %}
+  
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://i.pinimg.com/originals/15/d3/0e/15d30e53e4430e21210baf2eec1f9edd.jpg" 
+            class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Piano nhập môn</h1>       
+            <h2>Bước 1: Làm quen với các nốt nhạc</h2>
+                <p>
+                    Những nốt nhạc có thể trông sẽ rất lạ khi mới bắt đầu, hãy thử nghĩ chúng giống như những 
+                    chứ cái đầu tiên mà bạn học khi mới bước vào lớp 1. Cảm giác tò mò, khó khăn khi bạn viết hay 
+                    đọc những con chữ đầu tiên, chắc hẳn rất khó quên đúng không nào.
+                    <br>
+                    Những nốt nhạc cũng giống như vậy. Đó là những con chữ ABC của âm nhạc. Với một sự tập trung 
+                    luyện tập và chăm chỉ, bạn hoàn toàn có thể đọc viết một cách thành thạo, y như cách mà bạn 
+                    đang đọc những thông tin này.
+                    <br>
+                    Chúng ta hãy bắt đầu với một âm thanh khá quen thuộc, được gọi là “The sound of music” – Do 
+                    – Re – Mi – Fa – Sol – La – Si – Do . Bạn biết giai điệu này úng không?
+                    <br>
+                    Những nốt nhạc được kí hiệu bằng các chữ cái A B C D E F G. Mỗi nốt nhạc sẽ mang một tần 
+                    số khác nhau. Khi đánh chúng ta sắp xếp chúng lại, ta sẽ thành một giai điệu giống như một câu văn. Nhiều câu văn ghép lại thì thành 1 đoạn đúng không nào? Còn nhiều đoạn ghép lại sẽ thành 1 bản nhạc. Lý thuyết đơn giản như vậy thôi, bạn đã thấy phần nào âm nhạc rất hấp dẫn chưa?    
+                </p>
+            <h2>Bước 2: Làm quen với các nốt nhạc trên đàn Piano</h2>
+                <p>
+                    Trên đàn Piano tiêu chuẩn gồm 88 phím, đó chính là 88 nốt, tương đương 7 quãng 8. Mỗi quãng 8 đàn piano gồm 12 phím trong đó có 7 nốt trắng và 5 nốt đen. Khi học Piano, bạn chỉ cần hiểu và nhớ 1 quãng tám 
+                    thôi, là bạn có thể nhớ toàn bộ nốt trên phím đàn.
+                </p>
+            <h2>Bước 3: Chơi những nốt nhạc đầu tiên Do-Re-Mi</h2>
+                <p>
+
+                </p>
+            <h2>Bước 4: Hãy chơi một giai điệu khó hơn</h2>
+                <p>
+                    Nào giờ chúng ta sẽ đến với một bản nhạc khó hơn, đó là bài hát Jingle Bells. Xem kĩ video và để ý mọi thứ có trong bản nhạc. Nhịp 4/4 nghĩa là 4 phách trong một ô nhịp (4 nốt đen). 
+                    Hãy đến với bước tiếp theo để biết cách đọc nốt trong sheet nhạc.
+                </p>
+            <h2>Bước 5: Nốt nhạc và Timing</h2>
+                <p>
+                    Trong một ô nhịp 4/4:
+                    <ul>
+                        <li>Một nốt tròn (whole) có giá trị bằng 4 phách.</li>
+                        <li>Một nốt trắng (half) có giá trị bằng nửa nốt tròn, bằng 2 phách.</li>
+                    </ul>
+                    ….
+                    <br>
+                    Tương tự như vậy bạn cứ chia nhỏ ra, bạn sẽ có độ dài ngân của tất cả các nốt trong âm nhạc.
+                </p>
+            <h2>Bước 6: Kết nốt các nốt nhạc</h2>
+                <p>
+                    Ở khuông nhạc đầu tiên của sheet nhạc có 3 nốt Mi. 2 nốt đầu tiên là nốt đen và nốt còn lại là nốt trắng. Hãy tiếp tục tập luyện cho đến khi bạn có thể chơi đúng và 
+                    mượt mà đoạn trên là bạn đã có thể quen dần với nốt nhạc và trường độ.
+                </p>
+            <h2>Bước 7: Review và tập luyện</h2>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('music') }}"class="btn btn-primary">Quay lại Music</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

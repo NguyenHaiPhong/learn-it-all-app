@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+    
+</head>
+<body class="bg-cont">
+  {% if session["customer_signed_in"] == True %}
+  {% include "homepage/customer-signed-in-nav.html" %}
+  {% else %}
+  {% include "homepage/nav.html" %}
+  {% endif %}
+  <section class="content-section" id="portfolio">
+      <div class="container">
+        <div class="content-section-heading text-center">
+          <h2 class="mb-5 text-primary f-bungee">Giới thiệu tổng quan</h2>
+        </div>
+        <div class="row no-gutters m-4">
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="{{ url_for('gym') }}">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Gym</h2>
+                  <p class="mb-0">
+                  </p>
+                </span>
+              </span>
+              <img class="img-fluid" src="../../static/image/Sport/gym.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="{{ url_for('football') }}">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Bóng Đá</h2>
+                </span>
+              </span>
+              <img class="img-fluid" src="../../static/image/Sport/fooball.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="{{ url_for('basketball') }}">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Bóng Rổ</h2>
+                </span>
+              </span>
+              <img class="img-fluid" src="../../static/image/Sport/basketball.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="{{ url_for('show_all_categories') }}">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Nhiều Khóa học thú vị khác nữa</h2>
+                  <p class="mb-0">... đang chờ đón bạn ở Learn It All. Bắt đầu tìm kiếm đam mê của chính mình tại đây!</p>
+                </span>
+              </span>
+              <img class="img-fluid sida " src="../../static/image/Sport/basketball.jpg" alt="">
+            </a>
+          </div>
+        </div>            
+        </div>
+      </div>
+    </section>
+    <div class="d-flex justify-content-center">
+      <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+  {% include "homepage/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {% include "page/meta-data.html" %}
+
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://wallpapercave.com/wp/wp2159738.jpg" class="img-thumbnail"></div>
+            <h1 class="text-center mt-4">Ukulele</h1>
+                <h2>Giới thiệu</h2>
+                    <p class="f-milu">
+                        Ukulele, (phát /ˌjuːkəˈleɪliː/ EW-kə-LAY-lee; bắt nguồn từ tiếng Hawaii: 
+                        ʻukulele [ˈʔukuˈlɛlɛ]) đôi khi được gọi tắt là uke, thuộc họ guitar, thường có 4 dây.
+                        <br>
+                        Đàn ukulele xuất hiện vào thế kỷ XIX như là một phiên bản Hawaii của cavaquinho, 
+                        braguinha và rajao, các loại đàn ghi ta nhỏ được những người nhập cư Bồ Đào Nha đưa 
+                        đến Hawaii. Nó trở nên phổ biến ở bất cứ nơi nào trên đất Mỹ trong suốt thế kỷ XX và từ 
+                        đó phổ biến ra toàn thế giới.
+                        <br>
+                        Giai điệu và âm lượng của nhạc cụ này đa dạng với kích cỡ và cấu tạo khác nhau. Ukulele 
+                        thường có bốn kích cỡ phù hợp với giọng nữ cao, giọng nam cao, giọng nam trung và phối hợp. 
+                        (soprano, tenor, baritone và concert.)
+                    </p>
+                <h2>Lịch sử</h2>
+                    <p class="f-milu"v>
+                        Ukulele thường được liên hệ với âm nhạc từ Hawaii, nơi mà tên được dịch gần như là 
+                        "ruồi nhảy", có lẽ là do sự di chuyển linh hoạt của ngón tay của người chơi. 
+                        Legend cho rằng nó là biệt danh của anh chàng người Anh Edward William Purvis, 
+                        một trong số các sĩ quan của Vua Kalākaua, vì kích thước nhỏ bé, phong cách thận trọng 
+                        và tài chơi nhạc của anh này. Theo nữ hoàng Lili'uokalani, quốc vương Hawaii cuối cùng, 
+                        cái tên này có nghĩa là "món quà đến đây", từ những từ Hawaii uku (quà tặng hay phần thưởng) 
+                        và lele (sắp tới). Tuy nhiên, việc sử dụng thuật ngữ này có thể bắt nguồn từ năm 1810, trước 
+                        khi Purvis ra đời.
+                    </p>
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('music') }}" class="btn btn-primary">Quay lại Music</a>
+        <a href="{{ url_for('basic_learning_ukulele') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %} 
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leage Of Legends</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="../../../static/image/Esport/Liên Minh Huyền Thoại/lol cover.jpg" class="img-thumbnail"></div>
+            <h1 class="text-center mt-4">Tìm hiểu về Liên Minh Huyền Thoại</h1>
+                <h2>Giới thiệu</h2>
+                    <p class="f-milu">
+                        Liên Minh Huyền Thoại (viết tắt: LMHT, tiếng Anh: League of Legends, viết tắt tiếng Anh: LOL) là một trò chơi video đấu trường trận
+                        chiến trực tuyến nhiều người chơi (MOBA - Multiplayer Online Battlefield Arena) được Riot Games phát triển và phát hành cho hệ điều 
+                        hành Microsoft Windows và Mac OS X, lấy cảm hứng từ mod Defense of the Ancients cho trò chơi video Warcraft III: Frozen Throne. Nó là 
+                        một trò chơi được chơi miễn phí và được hỗ trợ bởi các vi giao dịch (micro-transaction). Trò chơi được công bố đầu tiên vào ngày 7
+                        tháng 10 năm 2008 và phát hành vào ngày 27 tháng 10 năm 2009. Kể từ khi phát hành, Liên Minh Huyền Thoại được đón nhận rất tích cực, 
+                        và trở nên phổ biến trong những năm sau đó. Theo một bài báo của Forbes năm 2012, Liên Minh Huyền Thoại là trò chơi máy tính được chơi 
+                        nhiều nhất ở Bắc Mỹ và Châu Âu về số giờ chơi. Đến tháng 1 năm 2014, có 67 triệu người chơi Liên Minh Huyền Thoại mỗi tháng, 27 triệu 
+                        người mỗi ngày, và hơn 7,5 triệu người cùng lúc trong những thời điểm cao nhất.
+                        <br>
+                        Trong Liên Minh Huyền Thoại, mỗi người chơi được gọi là một "triệu hồi sư" (summoner), điều khiển một nhân vật, gọi là "tướng" 
+                        (Champion - phân biệt với Hero trong DOTA và God trong SMITE), để đối đầu với một đội những người chơi khác hoặc các đối thủ máy tính. 
+                        Trong chế độ chơi truyền thống, mục tiêu cuối cùng của một đội là phá hủy nhà chính của đội đối phương – công trình nằm trong lòng căn 
+                        cứ của đối phương và được những công trình khác bảo vệ. Mỗi ván chơi Liên Minh Huyền Thoại đều riêng biệt nhau, người chơi bắt đầu với 
+                        cùng lượng tiền khởi điểm, với các tướng đều tương đối yếu, rồi dần dần tăng lên sức mạnh qua lượng tiền và kinh nghiệm thu được trong 
+                        suốt ván chơi.
+                        <br>
+                        Liên Minh Huyền Thoại đã trở nên phổ biến và xây dựng được những môi trường thi đấu cạnh tranh cao. Tại Bắc Mỹ và Châu Âu, Riot Games 
+                        tổ chức League of Legends Championship Series (LCS). Những giải đấu vùng khác cũng được tổ chức ở Trung Quốc (LPL), Hàn Quốc (LCK), 
+                        Đài Loan - Hồng Kông - Ma Cao (LMS), Đông Nam Á (GPL), Việt Nam (VCS), Nhật Bản (LJL), châu Đại Dương (OPL), Thổ Nhĩ Kỳ (TCL), các 
+                        nước CIS (LCL), Bắc Mỹ Latinh (LNN), Nam Mỹ Latinh (CLS), Brasil (CBLOL) (tùy theo vị trí địa lý và trình độ người chơi tại đó). 
+                        Những giải đấu vùng này chọn ra những đội tuyển xuất sắc nhất các khu vực để tham dự Mid-Season Invitational và Chung kết thế giới.
+                    </p>
+    </div>
+    <div class="container d-flex justify-content-around">
+            <a href="{{ url_for('esport') }}" class="btn btn-primary">Quay lại ESport</a>
+            <a href="{{ url_for('basic_learning_lol') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+            <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+        </div>
+    {% include "homepage/footer.html" %}   
+</body>
+</html>

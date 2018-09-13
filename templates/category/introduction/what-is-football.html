@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="../../../static/image/Sport/fooball.jpg" class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Tìm hiểu về bóng đá</h1>
+        <h2>Giới thiệu</h2>
+            <p>
+                Bóng đá hay Túc cầu là môn thể thao đồng đội được chơi giữa hai đội với nhau, mỗi đội có 11 cầu thủ trên sân. Trò chơi này dùng một 
+                quả bóng và thường được chơi trên sân cỏ hình chữ nhật với hai khung thành ở hai đầu sân. Mục tiêu của trò chơi là ghi điểm bằng 
+                cách đưa bóng vào khung thành của đội đối địch. Ngoại trừ thủ môn, các cầu thủ khác đều không được cố ý dùng tay hoặc cánh tay để chơi bóng. Đội chiến thắng là đội ghi được nhiều bàn thắng hơn khi kết thúc trận đấu.
+                <br>
+                Bóng đá được chơi ở đẳng cấp chuyên nghiệp trên thế giới. Hàng vạn người đến sân vận động để xem các trận thi đấu có đội bóng mà 
+                họ yêu thích, và hàng triệu người khác theo dõi qua tivi nếu không thể đến sân vận động. Ngoài ra, còn rất nhiều người chơi môn thể 
+                thao này ở đẳng cấp nghiệp dư.
+                <br>
+                Theo một cuộc khảo sát công bố vào năm 2001 của FIFA, tổ chức quản lý bóng đá trên thế giới, có hơn 240 triệu người thường xuyên 
+                chơi bóng đá ở hơn 200 quốc gia. Luật chơi đơn giản và dụng cụ thi đấu ít tốn kém giúp cho trò chơi này phát triển mạnh mẽ. 
+                Ở nhiều nước, bóng đá có vai trò quan trọng trong cuộc sống của người hâm mộ, trong cộng đồng địa phương hay cả quốc gia; 
+                do đó có thể nói đây là môn thể thao phổ biến nhất thế giới.
+            </p>
+        <h2>Tổng quan</h2>
+            <p>
+                Bóng đá là môn thể thao đồng đội được chơi theo các quy tắc đề ra trong Luật bóng đá (tiếng Anh: Laws of the Game). 
+                Các vận động viên tham gia chơi bóng đá được gọi là các cầu thủ, họ sử dụng một trái bóng hình cầu được gọi đơn giản là 
+                quả bóng đá, trái bóng hoặc trái banh. Trong trận đấu bóng đá, hai đội, mỗi đội gồm 11 cầu thủ sẽ tìm cách đưa trái bóng 
+                vào khung thành (còn gọi là cầu môn), đội nào đưa bóng vào khung thành đối phương nhiều hơn (ghi được nhiều bàn thắng hơn) 
+                sẽ là đội giành chiến thắng, nếu hai đội có số lần đưa bóng vào khung thành đối phương như nhau, hoặc không đội nào làm được 
+                việc này thì trận đấu sẽ kết thúc với kết quả hòa.
+                <br>
+                Quy tắc cơ bản nhất của môn bóng đá là các cầu thủ, trừ người bảo vệ khung thành (được gọi là thủ môn), được phép sử 
+                dụng bất cứ bộ phận nào trên cơ thể để chơi bóng trừ hai cánh tay và bàn tay của họ (tuy nhiên cầu thủ phải dùng tay để 
+                thực hiện việc ném biên). Trong một trận đấu thông thường, cầu thủ có thể chơi ở bất cứ vị trí nào và có thể đưa quả bóng 
+                theo bất cứ hướng nào trên sân, trừ trường hợp cầu thủ rơi vào thế việt vị thì không thể nhận bóng. Dựa vào các quy tắc cơ 
+                bản này, cầu thủ thường dùng chân để thực hiện các động tác kỹ thuật như rê bóng, lừa bóng, chuyền bóng cho đồng đội, sút bóng, 
+                với mục đích chính là tìm cách đưa bóng vào khung thành đối phương và ngăn không cho đối phương đưa bóng vào khung thành đội nhà. Cầu thủ hai đội có thể va chạm nhau thông qua các pha tranh bóng, tắc bóng nhưng tuyệt đối không được phạm những lỗi ghi trong luật như chuồi bóng từ phía sau, đẩy người, tiểu xảo. Điều khiển trận đấu là tổ trọng tài bao gồm một trọng tài chính và hai trọng tài biên, trọng tài chính sử dụng một chiếc còi cùng hai loại thẻ, thẻ vàng và thẻ đỏ, và có trách nhiệm bắt đầu, kết thúc hoặc tạm dừng trận đấu. Một trận đấu bóng đá thông thường có hai hiệp, mỗi hiệp 45 phút với khoảng thời gian 15 phút nghỉ giữa hai hiệp.
+            </p>                        
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('sport') }}" class="btn btn-primary">Quay lại Sport</a>
+        <a href="{{ url_for('basic_learning_football') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

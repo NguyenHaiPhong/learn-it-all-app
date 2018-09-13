@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    {% include "page/meta-data.html" %}
+
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="" class="img-thumbnail"></div>
+            <h1 class="text-center mt-4">Pro Evolution Soccer</h1>
+                <h2>Giới thiệu</h2>
+                    <p class="f-milu">
+                        Dương cầm (tiếng Anh: piano) là một nhạc cụ thuộc bộ dây phím, 
+                        rất phổ biến và được ưa chuộng trên toàn thế giới.
+                    </p>
+                <h2>Lịch sử</h2>
+                    <p class="f-milu"v>
+                        Những chiếc dương cầm cổ điển hay còn gọi thông thường là piano cổ điển ngày nay được xây dựng trực 
+                        tiếp từ những chiếc đàn clavico clavecin (harpsichord) từ khoảng thế kỷ 16 và 17. Khoảng năm 1700, Bartolomeo 
+                        Cristofori đã thử tạo ra một chiếc đàn harpsichord mà có thể biểu hiện âm nhạc một cách truyền cảm hơn, và đã tạo 
+                        ra một bộ máy mà các búa gõ vào các dây, khác với đàn harpsichord là dùng quill (dụng cụ gảy đàn bằng ống lông) để gảy. 
+                        Một đặc trưng lớn khác ở đàn piano thời đầu của ông là cơ cấu búa thoát, nó khiến cho búa tách rời khỏi phím một khi 
+                        các nốt được đánh lên, và rồi chơi lại ở một vận tốc khác hẳn, làm thay đổi hẳn sự biểu cảm của chính các note đó. 
+                        Những chiếc piano đầu tiên của Critofori vẫn còn chứa đựng rất nhiều nét giống với thiết kế của một cây đàn clavecin, 
+                        còn âm thanh thì phần nhiều vẫn như thế, ngoại trừ việc là người chơi bấy giờ có thể chơi nhạc bằng việc nhấn vào bàn phím.
+                        <br>
+                        Các thiết kế của Cristofori không được biết đến mãi cho đến những năm cuối của 1700, khi các bản thiết kế piano của ông 
+                        được xuất bản. Các nhà sản xuất như Gottfried Silbermann người Đức và học trò của ông là Christian Friederici và Johannes 
+                        Zumpe bắt đầu phát triển piano với vai trò là một nhạc cụ độc lập với clavecin. Mặc dù lúc đầu không được ấn tượng cho 
+                        lắm nhưng được J.S.Bach ủng hộ năm 1747. Âm nhạc bắt đầu được viết riêng cho piano từ năm 1732 và kỷ nguyên của nó với vai 
+                        trò một nhạc cụ dành cho biểu diễn bắt đầu.
+                        <br>
+                        Sự phát triển của piano cổ điển sau năm 1750 diễn ra theo hai hướng cơ bản. Ở Anh, đàn piano được thiết kế nặng hơn và 
+                        phức tạp hơn. Ở Đức, một loại khác nhẹ hơn và cấu trúc đơn giản hơn được biết đến như một cây đàn xứ Vienna, được nhà sản 
+                        xuất Johann Andreas Stein xây dựng, đó chính là những cây đàn mà Haydn, Mozart và Beethoven đã chơi và soạn nhạc trên đó.
+                        <br>
+                        Khi piano cổ điển ngày càng phát triển, nó dần trở thành một nhạc cụ độc lập và cần làm cho âm thanh to hơn. Để tăng âm, 
+                        các dây phải dày hơn và bộ khung phải khoẻ hơn nữa, như thế có thể đạt được một áp lực lớn hơn. Bộ khung của đàn piano 
+                        thông thường được làm bằng gỗ, trở nên dày hơn và nặng hơn và thanh chằng chéo giúp nó kiên cố hơn. Đến năm 1820, Thomas 
+                        Allen thậm chí vẫn còn dùng các ống kim loại để giữ căng các dây, và một nhà sản xuất thành công người Anh là John Broadwood 
+                        bắt đầu dùng các tấm bằng sắt để giữ cho chúng được căng lên, mà giờ đây các đĩa đó phần lớn được làm bằng kim loại hơn là 
+                        bằng gỗ. Năm 1825, Alpheus Babcock sáng chế ra khung bằng gang và sau đó năm 1843, một người Mỹ là Jonas Chickering bắt đầu 
+                        làm piano với một đĩa tròn vành, một nét đặc trưng của các piano cánh ngày nay. Một sự phát triển đáng chú ý khác là việc 
+                        chằng các dây, được phát triển bởi Henri Pape vào năm 1828 và Steinway cấp bằng sáng chế năm 1859, ông đã đặt các dây bass 
+                        dài hơn lên cao hơn các dây kim, giúp cho các dây dài hơn ở trong hộp ngắn hơn và đặt các dây bass ở giữa qua một bảng cộng 
+                        hưởng (soundboard) để có một sự hồi âm tốt hơn.
+                        <br>
+                        Piano cổ điển được bắt đầu sản xuất hàng loạt vào những năm 1800, cùng với sự thành lập của các công ty lớn chuyên sản xuất 
+                        đàn Piano cổ điển, những công ty này hoàn toàn phát triển từ nền tảng của mẫu đàn cánh đó tới năm 1821.
+                    </p>
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('music') }}" class="btn btn-primary">Quay lại Music</a>
+        <a href="{{ url_for('basic_learning_piano') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %} 
+</body>
+</html>

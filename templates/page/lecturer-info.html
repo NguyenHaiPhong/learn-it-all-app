@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <h1 class="mt-4 text-center">Danh sách giảng viên</h1>
+    {% for lecturer in all_lecturers %}
+    <div class="mt-4 container bootstrap snippet">
+            <div class="panel-body inf-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img alt="Avatar" title="" class="img-circle img-thumbnail lecturer-avatar isTooltip" src="{{ lecturer.profile_pic }}" 
+                        data-original-title="Usuario"> 
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-0 table-responsive">
+                        <table class="table table-condensed table-responsive table-user-information">
+                            <tbody>
+                                <tr>    
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-user text-primary"></span>    
+                                            Tên                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ lecturer.name }}     
+                                    </td>
+                                </tr>      
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Mô tả                                               
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        <ul>
+                                        {% for detail in lecturer.description %}
+                                            <li>
+                                                {{ detail }}
+                                            </li>
+                                        {% endfor %}
+                                        </ul> 
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Chuyên môn
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ lecturer.category_id.name }} 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <br>                   
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="mb-2 container d-flex justify-content-center">
+        <button class="btn btn-text-primary">
+            {% if lecturer.is_activating == True %}
+                <a href="{{ url_for('lecturer_detail', lecturer_id = lecturer.id) }}">Tìm hiểu thêm</a>
+            {% else %}
+                <p class="text-center">Giảng viên hiện không còn giảng dạy.</p>
+            {% endif %}
+        </button>
+    </div>  
+    <hr>
+    {% endfor %}
+    {% include "homepage/footer.html" %}
+</body>
+</html>

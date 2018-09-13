@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+            <div class="container mt-4 d-flex justify-content-center"><img src="https://wallpapercave.com/wp/bBWSsFB.jpg" class="img-thumbnail"></div>
+            <h1 class="text-center mt-4">Tìm hiểu về guitar</h1>
+            <h2>Giới thiệu</h2>
+                <p>
+                    Guitar, phiên âm: ghi-ta (tiếng Pháp: guitare; tiếng Anh: guitar), còn được biết đến dưới cái tên Tây Ban cầm 
+                    (西班琴), vốn xuất xứ là một nhạc cụ có cách đây hơn 5000 năm (loại guitar cổ), 
+                    sau này người Tây Ban Nha mới cải tiến nó thành đàn guitar ngày nay. Đàn guitar ngày nay có 6 dây, tuy nhiên 
+                    vẫn tồn tại những loại đàn guitar có 4, 7, 8, 10 và 12 dây. Nó là một loại nhạc cụ có phím và dây, có ứng dụng 
+                    rộng rãi trong các loại nhạc, có thể đệm cho hát, hòa tấu hoặc chơi độc tấu.
+                    <br>
+                    Guitar là một loại chordophone, theo truyền thống được làm từ gỗ và dùng dây bằng ruột động vật, nylon 
+                    hoặc dây thép và phân biệt với các chordophone khác bằng cách làm và cách chỉnh âm. Cây đàn guitar hiện đại được 
+                    kế thừa từ các loại đàn gittern, vihuela, guitar bốn thời Phục hưng, và guitar 5 thời baroque, 
+                    ất cả đều góp phần vào sự phát triển của nhạc cụ sáu dây hiện đại này.
+                    <br>
+                    Có ba loại chính của guitar acoustic hiện đại: guitar cổ điển (dây nylon), guitar acoustic dây thép, và guitar 
+                    archtop, mà đôi khi được gọi là "guitar jazz". Các giai điệu của một cây guitar acoustic được tạo ra bởi sự rung động 
+                    của dây, khuếch đại bởi hộp đàn rỗng của đàn guitar, hoạt động như một buồng cộng hưởng. Cây guitar cổ điển thường được 
+                    chơi như một nhạc cụ độc tấu bằng cách sử dụng kỹ thuật tỉa ngón tay toàn diện, trong đó mỗi dây được tách riêng bằng ngón 
+                    tay của người chơi, trái ngược với đánh hợp âm. Thuật ngữ "tỉa ngón tay" cũng có thể ám chỉ đến một truyền thống nhạc dân 
+                    gian, nhạc blues, bluegrass và nhạc đồng quê ở Hoa Kỳ. 
+                    Guitar bass acoustic là một nhạc cụ có độ cao nốt trầm thấp, dưới một quãng tám so với một cây đàn guitar thông thường.
+                </p>
+            <h2>Lịch sử</h2>
+                <p>
+                    Đàn guitar có một lịch sử phát triển lâu dài, có lẽ khởi đầu từ chiếc dây cung của những người thợ săn cổ. 
+                    Tiếng bật của dây cung khi mũi tên được phóng đi đã gợi ý cho người xưa sáng tạo ra đàn lia, đàn hạc và đàn luyt. 
+                    Những chiếc đàn này được làm từ gỗ, mai rùa và gân động vật. Ở Hy Lạp, thế kỷ 7, người ta thấy xuất hiện phổ biến đàn lia 
+                    và đàn cithara (một loại đàn lớn cồng kềnh, bắt chước cơ cấu của đàn lia với mặt gỗ to bản).
+                    <br>
+                    Từ "guitar" bắt nguồn từ chữ cithara. Cây đàn guitar đầu tiên có lẽ xuất hiện ở Ai Cập và Babylon từ 1000 năm trước 
+                    Công nguyên. Trải qua nhiều biến đổi, nó được những đạo quân xâm lược mang đến châu Âu khoảng thế kỷ thứ 8 và phát triển 
+                    rực rỡ vào thế kỷ 14, đặc biệt tại Tây Ban Nha. Người ta không biết từ guitarra xuất hiện ở Tây Ban Nha từ khi nào. Tuy 
+                    nhiên, trong suốt thế kỷ 14, có hai loại nhạc cụ mang tên guittara là đàn guittara Latina và guittara Morisca đã chiếm ngôi 
+                    vị độc tôn ở xứ sở bò tót.
+                    <br>
+                    Cùng với những nhạc cụ biểu diễn lưu động khác, cây đàn rebec (đàn violon 3 dây thời cổ) có bầu tròn đã theo chân các đạo 
+                    quân xâm lược tới Tây Ban Nha, trở thành một nhạc cụ phổ biến, làm nên một làn gió mới cho cuộc sống của những người dân nơi 
+                    đây. Rất nhiều nhạc sĩ đã sáng tác Văn bản liên kết dựa trên thanh âm của đàn Rebec. Thậm chí Giáo hội Tây Ban Nha đã phải ra 
+                    lệnh cấm các nhà thờ được chơi loại nhạc cụ này vì tính chất phóng khoáng xô bồ của nó.
+                    <br>
+                    Nhạc cụ bộ dây cổ nhất được tìm thấy tại khu vực Alaja Huyuk (thuộc bán đảo Anatoli) có niên đại 1400 năm trước Công nguyên. 
+                    Người ta còn tìm thấy một bức tượng đá cổ ở Hy Lạp minh hoạ một phụ nữ đang ôm đàn. Điểm đặc biệt là tư thế của nàng trùng 
+                    khớp với tư thế chơi đàn của các nghệ sĩ guitar ngày nay.
+                    <br>
+                    Vào thế kỷ thứ 15 vihuela là nhạc cụ đầu tiên mang đầy đủ những đặc trưng của cây đàn guitar. Những bản nhạc viết cho nhạc 
+                    cụ này còn lưu giữ được cho thấy sự hoàn thiện đáng kinh ngạc. Những cây đàn đầu tiên tại Ý mang lại những cải tiến đáng kể, 
+                    làm nên đặc trưng của cây guitar ngày nay. Đàn có một lỗ thoát âm duy nhất, một cần đàn và các khoá. Dây đàn thường gồm 4 dây 
+                    đôi (như đàn mandoline) và một dây đơn. Hộp đàn có hình số 8 và dài hơn so với cây đàn guitar hiện đại.
+                    <br>
+                    Tuy nhiên, phải đợi đến thế kỷ 19, dưới bàn tay tài hoa của nghệ nhân bậc thầy Antonio de Torres Jurado (1817-1892) cây đàn 
+                    guitar mới tìm được sự hoàn hảo của mình: đơn giản và thanh thoát. Đầu tiên phải kể đến tỉ lệ cân xứng. Trong thùng đàn, de 
+                    Torres đã thay cho 4 hoặc 5 thanh ngang truyền thống bằng một hệ thống 7 thanh gỗ hình dẻ quạt. Chúng được phân chia tỷ lệ 
+                    một cách chuẩn xác đến mức sau này không ai có thể vượt qua và nhờ đó những cây đàn của de Torres luôn có âm thanh mượt mà, 
+                    truyền cảm và sức ngân vang rất êm, rất sâu. De Torres cũng là người tìm ra độ dài chuẩn mực của dây đàn là 65 cm. Có thể nói 
+                    cho đến nay, khó ai có thể vượt qua sự mẫu mực về thanh âm và hình dáng của cây đàn của de Torres.
+                    <br>
+                    Một trong những giai đoạn phát triển tột bậc của cây đàn sáu dây là thời vua Ludwig XIV[cần dẫn nguồn]. Người ta có thể thưởng 
+                    thức tiếng đàn từ trong cung đình giàu sang tới những góc chợ nhỏ của những người bình dân. Ai ai cũng say mê guitar cho dù họ 
+                    ở giai tầng nào của xã hội. Tuy nhiên, chính vì ý nghĩ kỳ quái của tầng lớp quý tộc rằng họ đang cùng thưởng thức âm nhạc với giới bình dân mà cây đàn guitar đã có một thời gian dài không hề xuất hiện ở nơi cung đình.
+                    <br>
+                    Dù thế, cây đàn guitar vẫn âm thầm phát triển. Với cảm hứng nghệ thuật từ cuộc sống bình dân, họa sĩ Michelangelo Merisi da 
+                    Caravaggio đã sáng lập ra một trường phái nghệ thuật pha trộn giữa tĩnh vật và phồn thực mà tâm điểm của nó là tiếng đàn guitar 
+                    phóng khoáng và những bước nhảy vui nhộn bên bàn tiệc của những cô nàng hầu gái và những anh chàng nông phu hồn hậu. Có thể nói đây cũng là tiền đề dần hình thành nên dòng nhạc flamenco vô cùng quyến rũ, đặc trưng Tây Ban Nha.
+                    <br>
+                    Những tên tuổi như Ferdinando Carulli (1770-1841), Fernando Sor (1778-1839), Mauro Giuliani (1781-1829), Matteo Carcassi 
+                    (1792-1853) và đặc biệt là Francisco Tárrega (1852-1909) đẵ góp phần đưa tiếng đàn guitar trở lại đời sống âm nhạc hàn lâm. 
+                    Những bản nhạc kinh điển không chỉ mô phạm mà còn tràn đầy tính biểu cảm và sự tinh tế. Với mong muốn cây guitar có một vị trí 
+                    trong dàn nhạc giao hưởng, Tárrega đã không ngừng phát triển kỹ thuật chơi nhạc guitar, chuyển soạn các tác phẩm của Frédéric 
+                    Chopin, Robert Schumann, Johann Sebastian Bach cho guitar. Sau này, tiếp nối con đường của Francisco Tárrega, Andrés Segovia 
+                    (1893-1987) cùng với cây lục huyền cầm lần lượt chinh phục tất cả các phòng hòa nhạc.
+                    <br>
+                    Bên cạnh sự phát triển của dòng nhạc hàn lâm, cây guitar của Torres cũng rẽ nhánh sang dòng âm nhạc bình dân mà đáng kể nhất 
+                    phải nói đến flamenco. Kết hợp giữa tiếng guitar chau chuốt, nhịp điệu nhanh, những bước nhảy, tiếng vỗ tay hay là dậm gót của 
+                    các vũ công, flamenco thực sự mang đến cho người thưởng thức sự tươi đẹp của tâm hồn Tây Ban Nha. Biết bao thế hệ nghệ sĩ 
+                    flamenco đã nói tiếp nhau giữ gìn và mở rộng dòng nhạc này. Tuy nhiên, họ kế nghiệp nhau chủ yếu bằng cách học truyền khẩu nên 
+                    tên tuổi và âm nhạc của họ cũng chỉ được "truyền khẩu" trong dân gian. Ramón Montoya (1880-1942) là người duy nhất đã đưa được 
+                    flamenco tới các phòng hòa nhạc. Làm được điều này là do ông đã kết hợp một cách hài hoà sự thuần khiết của flamenco và tính kỹ 
+                    thuật của guitar cổ điển.
+                    <br>
+                    Sang đầu thế kỷ 20, cây guitar sáu dây đã có sự phát triển mạnh mẽ trong mọi tầng lớp xã hội. Cùng với những biến chuyển mới 
+                    trong đời sống nghệ thuật, kinh tế, xã hội, chính trị, tiếng đàn guitar đã rẽ sang các nhánh mới như nhạc rock, nhạc jazz và trở 
+                    thành nhạc cụ phổ thông nhất trong đời sống âm nhạc hiện đại.
+                </p>                        
+        </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('sport') }}" class="btn btn-primary">Quay lại Sport</a>
+        <a href="{{ url_for('basic_learning_guitar') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

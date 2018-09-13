@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="http://www.teambath.com/wp-content/uploads/2017/08/Gym-carousel-pics-0817_11.jpg" class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">GYM là gì? Tìm hiểu về tập gym, thể hình</h1>
+            <p class="f-milu">
+                Tập GYM bây giờ đang là 1 phong trào rèn luyện sức khỏe và xây dựng 1 body đẹp, dẻo dai không chỉ ở trong giới trẻ mà cả tầng lớp trung niên cũng đã bắt đầu thay đổi suy nghĩ.
+                <br>   
+                Vậy, GYM là gì?
+                <br>
+                &#34Gym&#34 xuất hiện trong các cụm từ: Tập gym, phòng gym.
+                <br>
+                Từ GYM có nguồn gốc từ tiếng Hy Lạp cổ đại, bắt nguồn từ từ gốc là &#34gymnasium&#34.
+                <br>
+                Người Hy lạp cổ đại rất coi trọng vẻ đẹp hình thể, nếu như bạn đã từng xem các bức tượng hay tranh ảnh về các vị thần Hi Lạp, 
+                thì họ đều có thân hình to lớn, cơ bắp nổi rõ, bụng 6 múi. 
+                Con người luôn cố gắng tập luyện để hướng tới vẻ đẹp của các vị thần.
+                <br>
+                &#34gymnasium&#34 được kết hợp từ hai nghĩa là "các động tác vận động cơ thể" 
+                và &#34không mặc quần áo&#34, để chỉ nơi tập thể dục trong nhà.
+                <br>
+                Quanh thành phố Athens có rất nhiều các trung tâm, mục đích chủ yếu đó là tập thể dục, các hoạt động về cơ thể, tắm và giảng dạy.
+                Và chỉ dành cho con cái nhà quý tộc. 
+                Các trung tâm bao gồm sân tập rất rộng và nhiều phòng nhỏ bao quanh, bao gồm các phòng tắm và thay đồ.
+                <br>
+                Và nếu các bạn cũng đã xem qua các cuộc thi Olympic cổ đại được phục dựng thì cũng sẽ thấy các vận động viên gần như không mặc gì, 
+                đây là 1 cách để thể hiện sự hiến dâng cơ thể lên thần linh và cũng để khán giả được chiêm ngưỡng cơ bắp của vđv.
+                <br>
+                Từ &#34gymnasium&#34 được kết hợp từ 2 nghĩa là vậy.
+                <br>
+                Nửa cuối thế kỷ 20, đầu thế kỷ 21, các trung tâm thể dục bắt đầu được thương mại hóa,
+                với các máy móc được nghiên cứu mới, các bài tập mới được sáng tạo đa dạng nhằm mục đích xây dựng cơ thể. Cho mọi tầng lớp của xã hội.
+                <br>
+                Tập thể hình du nhập đến VN từ rất lâu rồi, bắt đầu từ các phòng tập nhỏ với đồ tập tự chế,
+                đến bây giờ là các phòng tập hiện đại với thiết bị nhập khẩu chuẩn mực. Gym gần đây mới phát triển mạnh mẽ và được sử ủng hộ của mọi người.
+                <br>
+                Bởi nó giúp chúng ta xây dựng được 1 cơ thể đẹp hơn như mong muốn, sức khỏe được cải thiện rõ rệt.
+                <br>
+                Còn bây giờ, nếu bạn quan tâm tới việc xây dựng 1 cơ thể đẹp, 
+                bạn nam với cơ bắp vạm vỡ, bụng 6 múi, bạn gái với thân hình gọn gàng, mông cong vun cao thì hãy thử đi tập gym đi nhé.
+                <br>
+                Gym bây giờ không chỉ còn là phòng tập, mà bây giờ nó còn có ý nghĩa là 1 lối sống, 
+                phong cách sống hiện đại, năng động và khỏe mạnh.
+            </p>
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('sport') }}" class="btn btn-primary">Quay lại Sport</a>
+        <a href="{{ url_for('basic_learning_gym') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Trang chủ</a>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

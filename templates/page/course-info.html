@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    {% include "homepage/carousel.html" %}
+    <div class="mx-1">
+        <div class="show-all-courses">
+            <div class="mt-4 container text-danger text-center">
+                <br>
+                <h2 class="mt-2 mx-auto mb-4">Chào mừng bạn đến với các khoá học</h2>
+            </div>
+            <div class="container d-flex flex-wrap">
+                {% for course in all_courses %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top card-img-top-thumbnail" src="{{ course.thumbnail }}" alt="Thumbnail">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        {{ course.name }}
+                                    </h4>
+                                    {% if course.level == "Basic" %}
+                                        <h5>Mức độ: Cơ bản</h5>
+                                    {% elif course.level == "Advance" %}
+                                        <h5>Mức độ: Nâng cao</h5>
+                                    {% else %}
+                                        <h5>Mức độ: Thành thạo</h5>
+                                    {% endif %}
+                                    <h5>Học phí: {{ course.fee }}</h5>
+                                    <h5 class="card-text">Giới thiệu: {{ course.description }}</h5>
+                                    <a href="{{ url_for('course_detail', course_id = course.id) }}"><h3>Tìm hiểu thêm</h3></a>
+                                </div>
+                        </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        </div>           
+    </div>     
+    {% include "homepage/footer.html" %}
+</body>
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="https://cn.pling.com/img/c/b/4/9/72ccdfc9877a41431c0021c72d05ab610288.jpg" 
+            class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Giới thiệu về luật bóng đá</h1>
+            <h2 class="text-center mt-4">Luật thi đấu</h2>
+                <h3>Cầu thủ, trang phục và trọng tài</h3>
+                    <p>
+                        Mỗi trận đấu bóng đá bao gồm hai đội, mỗi đội 11 cầu thủ thi đấu chính thức trên sân kể cả 1 thủ môn. Thủ môn là người duy nhất 
+                        được phép chơi bóng bằng tay, tuy nhiên việc này cũng chỉ được giới hạn trong khu cấm địa phía trước khung thành do thủ môn trấn 
+                        giữ. Bên cạnh số cầu thủ chính thức mỗi đội cũng còn một số cầu thủ dự bị để thay thế khi cần thiết, thông thường trong một trận 
+                        bóng đá thi đấu chính thức, mỗi đội chỉ được phép thay đổi 3 cầu thủ. Cầu thủ sau khi được thay ra sẽ không thể tiếp tục quay trở 
+                        lại sân thi đấu. Người chỉ đạo chiến thuật cho đội bóng là huấn luyện viên, vị trí này không phải là quy định bắt buộc được ghi 
+                        trong Luật bóng đá.
+                        <br>
+                        Trang phục thi đấu của các cầu thủ thường bao gồm áo phông, quần soóc, tất cao đến đầu gối, giày và bảo vệ ống đồng. 
+                        Cầu thủ thi đấu trên sân bị cấm mặc, đeo hoặc mang theo các đồ vật có thể gây nguy hiểm cho cầu thủ đối phương như vòng, 
+                        dây chuyền hoặc đồng hồ. Do là vị trí được sử dụng tay và thường xuyên phải bay người theo bóng, thủ môn được trang bị kĩ 
+                        hơn các cầu thủ khác, họ thường mặc áo phông dài tay, đeo cả bảo vệ ống đồng và bảo vệ khuỷu tay và mang găng khi thi đấu.
+                        <br>
+                        Điều khiển trận đấu là tổ trọng tài bao gồm 1 trọng tài chính và 2 trọng tài biên, 
+                        những người này có toàn quyền điều khiển trận đấu theo các quy định của Luật bóng đá, quyết định của trọng tài chính dù 
+                        đúng hoặc sai cũng thường là quyết định cuối cùng và không thể đảo ngược. 
+                        Ngoài ba trọng tài làm việc trên sân còn có một trọng tài thứ tư (còn gọi là trọng tài bàn) 
+                        quản lý việc thay người, theo dõi thời gian bù giờ và thay thế trọng tài trên sân trong trường hợp cần thiết.
+                    </p>
+                <h3>Sân thi đấu</h3>
+                    <p>
+                        Do được hình thành ở Anh, luật bóng đá trước đây quy định các kích thước theo hệ đo lường Anh tuy nhiên hiện nay các số đo 
+                        này đã được đổi sang hệ SI cho phù hợp với sự phổ biến của bóng đá trên thế giới. Một sân bóng đá tiêu chuẩn cho các trận 
+                        đấu quốc tế có dạng chữ nhật với chiều dài nằm trong khoảng từ 100 đến 110 mét, chiều rộng từ 64 đến 75 m. Còn đối với các 
+                        trận đấu ở cấp độ thấp hơn, sân bóng có thể có chiều dài nằm trong khoảng từ 90 đến 120 m (100–130 yd) và rộng từ 45 đến 90 m 
+                        (50–100 yd). Hai cạnh dài của sân bóng được gọi là hai đường biên dọc, hai cạnh còn lại là đường biên ngang. Ở chính giữa hai 
+                        đường biên ngang là khung thành có dạng chữ nhật với chiều dài 7,32 m và chiều cao 2,44 m. Khung thành thường được giăng lưới 
+                        để dễ phân biệt tình huống bóng vào khung thành hay ra ngoài, tuy nhiên điều này không nằm trong quy định chính thức của Luật 
+                        bóng đá.
+                        <br>
+                        Phía trước mỗi khung thành là khu cấm địa. Khu vực này cũng có dạng chữ nhật với chiều dài dọc theo đường biên ngang của 
+                        sân với kích thước 40,3 m dài, 16,5 m rộng. Ở giữa khu cấm địa, cách khung thành 11 m là điểm đá phạt đền, nơi các cầu thủ
+                        thực hiện các cú sút phạt đền (do cầu thủ đối phương phạm lỗi trong khu vực cấm địa). Khu cấm địa cũng là nơi duy nhất thủ 
+                        môn được phép chơi bóng bằng tay. Ở phía trong khu cấm địa có một hình chữ nhật nhỏ hơn với chiều dài dọc theo đường biên
+                        ngang có kích thước 18,3 m dài, 5,5 m rộng (thường được gọi là khu 5 mét 50), đây là nơi cầu thủ đối phương tham gia tấn công 
+                        không được phép va chạm trực tiếp với thủ môn đang trấn giữ khung thành.
+                    </p>
+                <h3>Thời gian thi đấu</h3>
+                    <p>
+                        Một trận thi đấu bóng đá thông thường diễn ra trong hai hiệp chính thức liên tiếp, mỗi hiệp gồm 45 phút ngăn cách bằng 15 
+                        phút nghỉ giữa giờ. Sau khi hiệp 1, hai đội bóng sẽ phải đổi sân cho nhau để có sự công bằng trong vòng 1 phút. 
+                        Người có quyền bắt đầu và kết thúc trận đấu là trọng tài chính. Trong các tình huống phải dừng bóng hoặc bóng ra ngoài sân, 
+                        trọng tài sẽ tính thêm giờ, thời gian chết này sẽ được chơi bù vào cuối mỗi hiệp đấu (được gọi là những phút bù giờ), 
+                        số phút bù giờ là ít hoặc nhiều đều hoàn toàn phụ thuộc vào quyết định của trọng tài chính, kể cả trường hợp nó khác biệt 
+                        so với số phút bù giờ do trọng tài thứ tư công bố trên bảng điện tử. Quy định về thời gian đá bù xuất hiện sau trận đấu 
+                        năm 1891 giữa Stoke và Aston Villa, khi chỉ còn 2 phút là hết giờ, trong tình thế bị dẫn trước 1–0, đội Stoke bất ngờ được
+                        hưởng một quả phạt đền, thủ môn Villa đã đối phó bằng cách đá bóng ra khỏi sân và đến khi bóng trở lại sân thì đồng hồ đã 
+                        điểm 90 phút và Stoke thua trận.
+                        <br>
+                        Trong các giải thi đấu vòng tròn, một trận đấu có thể kết thúc với tỉ số hòa, tuy nhiên trong các trận đá loại trực tiếp 
+                        (như ở các giải Cúp hoặc các trận playoff), bắt buộc phải xác định được một đội giành chiến thắng. Trong trường hợp này, 
+                        nếu kết thúc 90 phút của 2 hiệp chính hai đội vẫn hòa, họ sẽ phải thi đấu thêm 2 hiệp phụ liên tiếp, mỗi hiệp 15 phút không 
+                        có nghỉ giữa giờ. Nếu hết 2 hiệp phụ mà kết quả vẫn hòa, hai đội sẽ phải thi đá luân lưu 11 m (hai đội thay phiên nhau thực 
+                        hiện các quả đá phạt đền) để xác định đội giành chiến thắng. Các bàn thắng ghi được trong hai hiệp phụ sẽ được tính vào kết 
+                        quả chung cuộc, tuy nhiên các bàn thắng ghi trong những loạt đá luân lưu 11 m sẽ không được tính (mà chỉ dùng để xác định kết 
+                        quả thắng thua). Trong thập niên 1990 và 2000, IFAB đã cho thử nghiệm luật Bàn thắng vàng, theo đó nếu trong hiệp phụ có một 
+                        đội ghi được bàn thắng trước, trận đấu sẽ lập tức kết thúc với kết quả thắng cho đội vừa ghi bàn. Luật bàn thắng vàng đã được 
+                        sử dụng ở cấp độ thế giới trong World Cup 1998 và World Cup 2002 với Pháp là đội tuyển đầu tiên tận dụng được lợi thế này khi 
+                        giành chiến thắng trước Paraguay bằng bàn thắng vàng của Laurent Blanc (năm 1998), Pháp cũng là đội vô địch ở giải đấu năm 1998. Tại Giải vô địch bóng đá châu Âu 1996, đội tuyển bóng đá quốc gia Đức đã giành chức vô địch sau chiến thắng trước đội tuyển bóng đá quốc gia Cộng hòa Séc bằng bàn thắng vàng của Oliver Bierhoff. Tại Giải vô địch bóng đá châu Âu 2004, luật bàn thắng vàng được thay thế bằng luật Bàn thắng bạc theo đó nếu kết thúc hiệp phụ đầu tiên mà có một đội dẫn trước về tỉ số, trận đấu sẽ kết thúc với chiến thắng dành cho đội có lợi thế về tỉ số. Tuy nhiên hiện nay IFAB đã bỏ việc thử nghiệm cả hai luật này.
+                        <br>
+                        Trong các trận đấu loại trực tiếp theo thể thức lượt đi-lượt về, thông thường người ta sẽ tính tới luật bàn thắng sân khách. 
+                        Theo đó nếu sau hai trận mà hai đội có kết quả chung cuộc hòa nhau, đội nào ghi được nhiều bàn thắng hơn trên sân khách sẽ là 
+                        đội giành chiến thắng. Tuy nhiên không phải giải đấu lớn nào cũng sử dụng lợi thế này, ví dụ như tại Copa Libertadores ở Nam Mỹ.
+                    </p>
+                <h3>Trạng thái bóng trên sân</h3>
+                    <p>
+                        Theo luật bóng đá, có hai trạng thái bóng chính trên sân, đó là bóng động và bóng chết. Thời gian bóng động trong trận đấu được tính từ thời điểm các cầu thủ bắt đầu trận đấu bằng cú phát bóng giữa sân cho đến khi bóng rơi ra ngoài khu vực sân thi đấu hoặc trận đấu bị ngừng lại bởi quyết định của trọng tài (do cầu thủ phạm lỗi, chấn thương hoặc tình huống đặc biệt khác), khi đó bóng rơi vào trạng thái bóng chết. Trận đấu lúc này sẽ được khởi động lại bằng các cách chính sau:
+                        <br>
+                        <ul>
+                            <li>
+                                Ném biên: Khi bóng rơi ra ngoài đường biên dọc do tác động của một cầu thủ đội nhà (dù ở trên mặt sân hay bay trên không). Đội đối phương sẽ được hưởng quyền ném bóng từ vị trí trên đường biên dọc mà bóng rời sân. Từ quả ném biên, bàn thắng chỉ được công nhận khi chạm chân cầu thủ khác.
+                            </li>
+                            <li>
+                                Phát bóng: Khi bóng rơi ra ngoài đường biên ngang do tác động của cầu thủ tấn công đối phương. Đội phòng ngự sẽ được hưởng quyền phát bóng lên. Từ quả phát bóng, nếu bóng được đá vào cầu môn, bàn thắng được công nhận.
+                            </li>
+                            <li>
+                                Phạt góc: Khi bóng rơi ra ngoài đường biên ngang do tác động của cầu thủ phòng ngự. Đội tấn công sẽ được hưởng quyền đưa bóng vào trận đấu bằng cú đá từ điểm đá phạt góc (là điểm nối giữa đường biên dọc và đường biên ngang). Từ quả đá phạt góc, nếu bóng được đá vào cầu môn, bàn thắng sẽ được tính.
+                            </li>
+                            <li>
+                                Đá phạt gián tiếp: Khi có cầu thủ bị phạm lỗi nhẹ. Đội đối phương sẽ được hưởng quyền đưa bóng vào trận đấu, nếu đá bóng trực tiếp vào cầu môn, bàn thắng không được công nhận. Bàn thắng chỉ được công nhận khi bóng chạm chân một cầu thủ khác.
+                            </li>
+                            <li>
+                                Đá phạt trực tiếp: Khi có cầu thủ bị phạm lỗi nặng (lỗi quy định trong điều 12 của Luật bóng đá, ví dụ bị phạm lỗi khi đang có lợi thế tấn công, bị phạm lỗi từ phia sau). Đội đối phương sẽ được quyền đưa bóng vào trận đấu và bàn thắng ghi vào cầu môn từ cú đá phạt này sẽ được tính.
+                            </li>
+                            <li>
+                                Phạt đền: Khi có cầu thủ tấn công bị phạm lỗi trong khu vực cấm địa của đội phòng ngự. Đội tấn công sẽ được hưởng cú đá phạt từ vị trí đá phạt 11 m, đây là cú đá chỉ có sự tham gia của một cầu thủ đội tấn công (người sút phạt đền) và thủ môn đội phòng ngự.
+                            </li>
+                            <li>
+                                Thả bóng: Khi trận đấu bị dừng lại không phải do bóng ra ngoài sân hoặc có cầu thủ bị phạm lỗi (ví dụ có cầu thủ bị chấn thương, có cổ động viên nhảy vào sân). Trọng tài sẽ là người cầm bóng và thả trước sự có mặt của một cầu thủ mỗi đội.
+                            </li>
+                        </ul>
+                    </p>      
+                               
+    </div>
+    <div class="container d-flex justify-content-around">
+        <a href="{{ url_for('sport') }}"class="btn btn-primary">Quay lại Sport</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>    
+    {% include "homepage/footer.html" %}
+</body>
+</html>

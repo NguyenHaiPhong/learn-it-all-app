@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body id="LoginForm" class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container">
+        <h1 class="mt-4 form-heading text-center">Đăng nhập</h1>
+            <div class="login-form d-flex justify-content-center">
+                <div class="main-div">
+                    <div class="panel text-center">
+                        <h2>Người dùng đăng nhập</h2>
+                            <p>Xin nhập tài khoản và mật khẩu</p>
+                    </div>
+                        <form id="Login" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="sign-in" class="form-control" id="inputEmail" placeholder="Tên tài khoản">
+                            </div>
+                            <div class="form-group">
+                                <input type="password"  name="password" class="form-control" id="inputPassword" placeholder="Mật khẩu">
+                            </div>
+                            {% if error %}
+                                <p class="error text-danger"><strong>Error:</strong> {{error}}
+                            {% endif %}
+                            <div class="forgot d-flex justify-content-center">
+                                <a href="#">Quên mật khẩu?</a>
+                            </div>
+                            <div class="mt-2 d-flex justify-content-center">
+                                <br>
+                                <a href="{{ url_for('customer_sign_up') }}">Đăng ký</a>
+                                <br>
+                            </div>
+                            <div class="mt-2 d-flex justify-content-center">
+                                <br>
+                                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    {% include "homepage/footer.html" %}
+</body>
+</html>

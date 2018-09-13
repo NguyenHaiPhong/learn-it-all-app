@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body class="bg-cont">
+    {% if session["customer_signed_in"] == True %}
+    {% include "homepage/customer-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <div class="container my-4 d-flex flex-column justify-content-center">
+        <div class="container mt-4 d-flex justify-content-center"><img src="../../../static/image/Esport/Dota 2/dota2-thumbnail.jpg" class="img-thumbnail"></div>
+        <h1 class="text-center mt-4">Dota 2</h1>
+            <h2>Giới thiệu</h2>
+                <p>
+                    Dota 2 là một trò chơi hành động chiến thuật thời gian thực (ARTS) được Valve Corporation phát triển, 
+                    dựa theo một mod game nổi tiếng, Defense of the Ancients, từ trò chơi Warcraft III: Reign of Chaos 
+                    và bản mở rộng của nó The Frozen Throne. Được công bố lần đầu vào ngày 23 tháng 10 năm 2010 qua Game Informer,
+                    trò chơi sau đó được đưa vào thử nghiệm với một bản beta miễn phí thông qua hệ thống giftcode. 
+                    Valve phát hành Dota 2 qua hệ thống điều phối Steam của họ mà qua đó trò chơi được cập nhật song song với hệ thống phiên bản DotA.
+                    Thông thường, mỗi ván Dota 2 là một trận đấu riêng biệt và chia làm 2 đội, mỗi đội gồm 5 người chơi và chiếm đóng một thành lũy ở 2 góc đối diện của bản đồ. 
+                    Nằm giữa pháo đài mỗi bên là một công trình gọi là "Ancient" ("Thánh tích"); để giành chiến thắng, một đội phải phá hủy thánh tích của đội đối phương. Mỗi người chơi chỉ được điều khiển một nhân vật duy nhất sở hữu một số khả năng chiến đấu nhất định, phối hợp cùng đồng đội giành lợi thế trên bản đồ để đi tới chiến thắng.
+                    <br>
+                    Công việc phát triển Dota 2 được bắt đầu vào năm 2009, với việc Valve tuyển được nhà phát triển "IceFrog" của bản mod DotA làm nhà thiết kế
+                    chính của tựa trò chơi tiếp nối này. Dota 2 được khen ngợi bởi các nhà phê bình trò chơi điện tử do vừa giữ được nét đặc sắc của 
+                    trò tiền nhiệm là DotA, vừa nâng cao được chất lượng trò chơi, cũng như những cảm nhận lôi cuốn, hứng thú mà trò chơi mang lại. 
+                    Tuy nhiên Dota 2 cũng bị phê phán bởi việc nó có "đường cong học hỏi" dốc và cộng đồng người chơi thiếu thân thiện. 
+                    Kể từ khi ra mắt, Dota 2 luôn là trò được chơi nhiều nhất trên Steam, với lượng người chơi cùng lúc ở đỉnh điểm là 1.262.612.
+                    <br>
+                    Sau đó đến ngày 9 tháng 7 năm 2013, Dota 2 được chính thức kết thúc giai đoạn Beta và được phát hành dưới dạng Free to play 
+                    trên Windows và sau đó là ngày 18 tháng 7 năm 2013 trên Linux và OS X.
+                </p>
+            <h2>Cách chơi</h2>
+                <p>
+                    Dota 2 kết hợp các yếu tố của trò chơi chiến lược thời gian thực với góc nhìn từ trên xuống với các yếu tố chức năng về kinh 
+                    nghiệm và đồ trong trò chơi nhập vai. Người chơi được chia vào hai đội có tên gọi Radiant và Dire. Căn cứ bên Radiant ở phía 
+                    dưới bên trái (góc tây nam) bản đồ còn căn cứ bên Dire ở phía trên bên phải (góc đông bắc) bản đồ. Người chơi có thể chọn một
+                    trong 118 hero với cấp độ (level) sử dụng kinh nghiệm để lên được tối đa là 25. Cách thức hero tham gia các cuộc chiến
+                    giữa hai bên phụ thuộc nhiều vào thuộc tính chính của hero đó. Trong trò chơi này mỗi hero có ba thuộc tính là strength 
+                    (sức mạnh), agility (nhanh nhẹn) và intelligence (thông minh), trong đó có một thuộc tính là chính. Như vậy hero cũng được chia 
+                    thành ba loại tương ứng với thuộc tính chính.
+                <br>
+                    Ở giữa căn cứ của mỗi bên có một công trình lớn có tên "Ancients" (Thánh tích). Mục tiêu của trò chơi là phá hủy công trình này 
+                    của đối phương. Bản đồ được phân đôi bởi một con sông và cân bằng về mặt địa hình giữa hai bên. Hai căn cứ nối với nhau bằng ba 
+                    con đường chính (được gọi là lane), dựa vào hướng nhìn mặc định trong game người ta gọi ba đường này lần lượt là mid (giữa), 
+                    top (trên), và bot (dưới). Trên mỗi đường vào căn cứ có những trụ (tower) bảo vệ và phải phá hủy được trụ ngoài mới tấn công 
+                    được trụ bên trong. Để phá được Thánh tích thì phải phá hủy được hai trụ cuối cùng bảo vệ nó. Ngoài ra, ở mỗi đường có những đơn
+                    vị quân (gọi là creep) được sinh ra đều đặn theo thời gian, tiến về căn cứ đối phương, tấn công hero và đơn vị quân, cũng như 
+                    trụ của đối phương.
+                <br>
+                    Để phá hủy được Thánh tích thì trên đường vào căn cứ phải chiến đấu với đối phương. Vì Dota 2 
+                    đề cao tính đồng đội nên người chơi phải phối hợp tốt với đồng đội mình mới đem lại chiến thắng cuối cùng.
+                <br>    
+                    Đơn vị trao đổi trong trò chơi là vàng. Các hero dùng vàng để mua đồ đạc, tăng cường sức mạnh và những khả năng khác do những món đồ mang 
+                    lại. Vàng mỗi hero có tăng theo thời gian, tuy nhiên không đáng kể. Vàng chủ yếu thu được từ việc tiêu diệt hero, phá hủy công trình, tiêu 
+                    diệt đơn vị quân đối phương. Những công việc này đem lại cả điểm kinh nghiệm. Từ đó có một kỹ năng là tự tiêu diệt đơn vị quân hoặc công trình bên mình (gọi là deny)
+                    khi còn ít máu để tránh việc đối phương có vàng và giảm lượng kinh nghiệm thu được. 
+                    Khi hero tích lũy đủ kinh nghiệm thì sẽ tăng cấp độ. Khi tiêu diệt đối phương thì người chơi có đòn kết thúc cuối cùng sẽ thu được
+                    nhiều vàng và kinh nghiệm hơn, từ đó có kỹ năng canh để có đòn kết thúc (last hit). Với các trụ bên trong, cũng như hero cấp độ cao thì
+                    khi tiêu diệt người chơi sẽ thu được nhiều vàng hơn.
+                </p>
+    </div>
+    <div class="container d-flex justify-content-around btn">
+        <a href="{{ url_for('esport') }}"class="btn btn-primary">Quay lại ESport</a>
+        <a href="{{ url_for('basic_learning_dota2') }}" class="btn btn-primary">Tìm hiểu thêm</a>
+        <a href="{{ url_for('homepage') }}"class="btn btn-primary">Trang chủ</a>
+    </div>
+</body>
+{% include "homepage/footer.html" %}
+</html>

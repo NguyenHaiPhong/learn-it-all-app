@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn it all</title>
+    {% include "page/meta-data.html" %}
+</head>
+<body>
+    {% if session["admin_signed_in"] == True %}
+    {% include "homepage/admin-signed-in-nav.html" %}
+    {% else %}
+    {% include "homepage/nav.html" %}
+    {% endif %}
+    <h1 class="mt-4 text-center">Thông tin người dùng</h1>
+    {% for customer in all_customers %}
+    <div class="mt-4 container bootstrap snippet">
+            <div class="panel-body inf-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img alt="" style="width:550px; height:350px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ customer.profile_pic }}" 
+                        data-original-title="Usuario"> 
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-0 table-responsive">
+                        <table class="table table-condensed table-responsive table-user-information">
+                            <tbody>
+                                <tr>    
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-user text-primary"></span>    
+                                            Tên                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ customer.name }}     
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                            Email                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ customer.email }}  
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                                Số điện thoại                                               
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{ customer.phone_number }} 
+                                    </td>
+                                </tr>       
+                            </tbody>
+                        </table>
+                        </div>
+                        <br>                   
+                    </div>
+                </div>
+            </div>
+    </div>
+    <hr>
+    {% endfor %}
+    {% include "homepage/footer.html" %}
+</body>
+</html>
