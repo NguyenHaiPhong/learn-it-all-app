@@ -64,8 +64,8 @@ def user_sign_in():
             return render_template("user/user-sign-in.html")
     elif request.method == "POST":
         form = request.form
-        sign_in = form["sign-in"]
-        password = form["password"]
+        sign_in = form["sign-in"].lower()
+        password = form["password"].lower()
         all_users = User.objects(sign_in__exact = sign_in, 
         password__exact = password)
         if len(all_users) != 0: 
@@ -331,23 +331,30 @@ def course_info(category_id):
 @app.route("/user/user-sign-up", methods = ["GET", "POST"])
 def customer_sign_up():
     error = None
+    checking = 0
     if request.method == "GET":
         return render_template("user/customer/customer-sign-up.html")
     elif request.method == "POST":
         form = request.form
         name = form["name"]
         email = form["email"]
-        sign_up = form["sign-up"]
-        password = form["password"]
-        new_customer = User(
-            name = name,
-            sign_in = sign_up,
-            email = email,
-            password = password,
-        )
-        new_customer.save()
-        User.reload(new_customer)
-        return redirect(url_for("user_sign_in"))
+        sign_up = form["sign-up"].lower()
+        password = form["password"].lower()
+        all_customers = User.objects(sign_in__exact = sign_up)
+        if len(all_customers) != 0:
+            checking = 1
+            error = ("Trùng tên tài khoản.")
+            return render_template("user/customer/customer-sign-up.html", error = error, checking = checking)
+        elif len(all_customers) == 0:
+            new_customer = User(
+                name = name,
+                sign_in = sign_up,
+                email = email,
+                password = password,
+            )
+            new_customer.save()
+            User.reload(new_customer)
+            return redirect(url_for("user_sign_in"))
 
 #. Detail Course (Customer)
 @app.route("/course-detail/<course_id>")
