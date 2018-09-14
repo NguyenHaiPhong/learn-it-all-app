@@ -481,6 +481,11 @@ def ukulele():
 def basic_learning_football():
     return render_template("category/basic-knowledge/basic-learning-football.html")
 
+#. Route Ukulele
+@app.route("/basic-learning/ukulele")
+def basic_learning_ukulele():
+    return render_template("category/basic-knowledge/basic-learning-ukulele.html")
+
 #. Route Basketball
 @app.route("/basic-learing/basketball")
 def basic_learning_basketball():
