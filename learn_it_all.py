@@ -485,6 +485,10 @@ def basic_learning_lol():
 def basic_learning_pes():
     return render_template("category/basic-knowledge/basic-learning-pes.html")
 
+@lia_app.route("/basic-learning/piano")
+def basic_learning_piano():
+    return render_template("category/basic-knowledge/basic-learning-piano.html")
+
 #. Route Dota 2
 @lia_app.route("/basic-learing/dota2")
 def basic_learning_dota2():

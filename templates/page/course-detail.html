@@ -132,11 +132,13 @@
     <br>
     <div class="mb-2 container d-flex flex-column align-items-center">
         {% if checking == "purchased" %}
+            <p class="text-center">( ͡° ͜ʖ ͡°)</p>
             <p class="text-center">Bạn đã mua khoá học này. Hiện bạn có thể xem video bài học tại trang cá nhân.</p>    
             <button class="btn btn-text-primary">
                 <a href="{{ url_for('customer_profile', customer_id = session['customer_signed_in_id']) }}">Trang cá nhân</a>
             </button>
         {% elif checking == "not_purchased" %}
+            <p class="text-center">¯\_(ツ)_/¯</p>
             <p class="text-center">Bạn đã đăng ký khoá học này. Xin chờ quản trị viên phê duyệt yêu cầu.</p>
         {% elif checking == "not_order" %}
             <button class="btn btn-text-primary">

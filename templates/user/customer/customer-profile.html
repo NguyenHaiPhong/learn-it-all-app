@@ -97,7 +97,11 @@
                                         <h5>Mức độ: Thành thạo</h5>
                                     {% endif %}
                                     <h5 class="card-text">Giới thiệu: {{ course.course_id.description }}</h5>
-                                    <a href="{{ url_for('course_content', course_id = course.course_id.id) }}"><h3>Xem video bài học</h3></a>
+                                    {% if course.course_id.is_activating == True %}
+                                        <a href="{{ url_for('course_content', course_id = course.course_id.id) }}"><h3>Xem video bài học</h3></a>
+                                    {% else %}
+                                        <h5>Khoá học hiện không khả dụng.</h5>
+                                    {% endif %}
                                 </div>
                         </div>
                     </div>

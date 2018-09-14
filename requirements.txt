@@ -1,5 +1,23 @@
+# ----------------------
+# Flask
+# ----------------------
 flask
+flask-restful
+flask-socketio
+
+# ----------------------
+# Database
+# ----------------------
 mongoengine
+
+# ----------------------
+# Production Server
+# ----------------------
 eventlet
 gunicorn
-youtube_dl
+
+# ----------------------
+# Others
+# ----------------------
+addict
+shortuuid
