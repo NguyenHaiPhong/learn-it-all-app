@@ -3,18 +3,18 @@ from models.classes import *
 from datetime import datetime
 from flask import *
 from youtube_dl import YoutubeDL 
-lia_app = Flask(__name__)
+app = Flask(__name__)
 
 mlab.connect()
-lia_app.secret_key = "lia"
+app.secret_key = "lia"
 
 #. Homepage
-@lia_app.route("/")
+@app.route("/")
 def homepage():
     return render_template("/page/homepage.html")
 
 #. About us
-@lia_app.route("/about-us")
+@app.route("/about-us")
 def about_us():
     return  render_template("page/about-us.html")
 
@@ -52,7 +52,7 @@ def about_us():
 #             return render_template("user/user-sign-in.html", error = error)
 
 #. User sign in - 2
-@lia_app.route("/user-sign-in", methods = ["GET", "POST"])
+@app.route("/user-sign-in", methods = ["GET", "POST"])
 def user_sign_in():
     error = None
     if request.method == "GET":  
@@ -85,7 +85,7 @@ def user_sign_in():
 
 # ---ADMIN---
 #. Admin page
-@lia_app.route("/admin")
+@app.route("/admin")
 def admin_page():
     if "admin_signed_in" in session:
         return render_template("user/admin/admin.html")
@@ -93,7 +93,7 @@ def admin_page():
         return redirect(url_for("user_sign_in"))
 
 #. Show all lecturers
-@lia_app.route("/admin/show-all-lecturers")
+@app.route("/admin/show-all-lecturers")
 def admin_show_all_lecturers():
     if "admin_signed_in" in session:
         all_lecturers = Lecturer.objects()
@@ -103,7 +103,7 @@ def admin_show_all_lecturers():
         return redirect(url_for("user_sign_in"))
 
 #. Show all customers
-@lia_app.route("/admin/show-all-customers")
+@app.route("/admin/show-all-customers")
 def admin_show_all_customers():
     if "admin_signed_in" in session:
         all_customers = User.objects(is_admin = False)
@@ -113,7 +113,7 @@ def admin_show_all_customers():
         return redirect(url_for("user_sign_in"))
 
 #. Show all orders
-@lia_app.route("/admin/show-all-orders")
+@app.route("/admin/show-all-orders")
 def admin_show_all_orders():
     if "admin_signed_in" in session:
         all_orders = Order.objects()
@@ -123,7 +123,7 @@ def admin_show_all_orders():
         return redirect(url_for("user_sign_in"))
 
 #Show all courses
-@lia_app.route("/admin/show-all-courses")
+@app.route("/admin/show-all-courses")
 def admin_show_all_courses():
     if "admin_signed_in" in session:
         all_courses = Course.objects()
@@ -133,7 +133,7 @@ def admin_show_all_courses():
         return redirect(url_for("user_sign_in"))
 
 #. Update lecturer
-@lia_app.route("/admin/update-lecturer/<lecturer_id>", methods = ["GET", "POST"])
+@app.route("/admin/update-lecturer/<lecturer_id>", methods = ["GET", "POST"])
 def admin_update_lecturer(lecturer_id):
     if request.method == "GET":
         if "admin_signed_in" in session:
@@ -158,7 +158,7 @@ def admin_update_lecturer(lecturer_id):
         return redirect(url_for("admin_show_all_lecturers"))
 
 #. Update course
-@lia_app.route("/admin/update-course/<course_id>", methods = ["GET", "POST"])
+@app.route("/admin/update-course/<course_id>", methods = ["GET", "POST"])
 def admin_update_course(course_id):
     if request.method == "GET":
         if "admin_signed_in" in session:
@@ -180,7 +180,7 @@ def admin_update_course(course_id):
         return redirect(url_for("admin_show_all_courses"))
 
 #. Accept Order
-@lia_app.route("/admin/accept-order/<order_id>")
+@app.route("/admin/accept-order/<order_id>")
 def admin_accept_orders(order_id):
     if "admin_signed_in" in session:
         order = Order.objects.with_id(order_id)
@@ -192,7 +192,7 @@ def admin_accept_orders(order_id):
         return redirect(url_for("user_sign_in"))
 
 #. Delete Lecturer
-@lia_app.route("/admin/del-lecturer/<lecturer_id>")
+@app.route("/admin/del-lecturer/<lecturer_id>")
 def admin_del_lecturer(lecturer_id):
     if "admin_signed_in" in session:
         lecturer = Lecturer.objects.with_id(lecturer_id)
@@ -207,7 +207,7 @@ def admin_del_lecturer(lecturer_id):
         return redirect(url_for("user_sign_in"))
 
 #. Active Lecturer
-@lia_app.route("/admin/active-lecturer/<lecturer_id>")
+@app.route("/admin/active-lecturer/<lecturer_id>")
 def admin_active_lecturer(lecturer_id):
     if "admin_signed_in" in session:
         lecturer = Lecturer.objects.with_id(lecturer_id)
@@ -222,7 +222,7 @@ def admin_active_lecturer(lecturer_id):
         return redirect(url_for("user_sign_in"))
 
 #. Delete Course
-@lia_app.route("/admin/del-course/<course_id>")
+@app.route("/admin/del-course/<course_id>")
 def admin_del_course(course_id):
     if "admin_signed_in" in session:
         course = Course.objects.with_id(course_id)
@@ -233,7 +233,7 @@ def admin_del_course(course_id):
         return redirect(url_for("user_sign_in"))
 
 #. Active Course
-@lia_app.route("/admin/active-course/<course_id>")
+@app.route("/admin/active-course/<course_id>")
 def admin_active_course(course_id):
     if "admin_signed_in" in session:
         course = Course.objects.with_id(course_id)
@@ -245,7 +245,7 @@ def admin_active_course(course_id):
 
 # ---CUSTOMER---
 #. Customer profile
-@lia_app.route("/customer-proflie/<customer_id>")
+@app.route("/customer-proflie/<customer_id>")
 def customer_profile(customer_id):
     if "customer_signed_in" in session:
         customer = User.objects.with_id(customer_id)
@@ -256,7 +256,7 @@ def customer_profile(customer_id):
         return redirect(url_for("user_sign_in"))
 
 #. Course content
-@lia_app.route("/course-content/<course_id>")
+@app.route("/course-content/<course_id>")
 def course_content(course_id):
     if "customer_signed_in" in session:
         course = Course.objects.with_id(course_id)
@@ -274,7 +274,7 @@ def course_content(course_id):
     all_lessons = all_lessons, list_videos = list_videos)
 
 #. Lecturer info
-@lia_app.route("/show-all-lecturers")
+@app.route("/show-all-lecturers")
 def lecturer_info():
     if "customer_signed_in" in session:
         all_lecturers = Lecturer.objects(is_activating = True)
@@ -284,7 +284,7 @@ def lecturer_info():
         return redirect(url_for("user_sign_in"))
 
 #. Lecturer detail
-@lia_app.route("/lecturer-detail/<lecturer_id>")
+@app.route("/lecturer-detail/<lecturer_id>")
 def lecturer_detail(lecturer_id):
     if "customer_signed_in" in session:
         lecturer = Lecturer.objects.with_id(lecturer_id)
@@ -295,7 +295,7 @@ def lecturer_detail(lecturer_id):
         return redirect(url_for("user_sign_in"))
 
 #. Show all categories
-@lia_app.route("/show-all-categories")
+@app.route("/show-all-categories")
 def show_all_categories():
     if "customer_signed_in" in session:
         all_categories = Category.objects()
@@ -307,14 +307,14 @@ def show_all_categories():
         return redirect(url_for("user_sign_in"))
 
 #. Courses info
-@lia_app.route("/courses-info/<category_id>")
+@app.route("/courses-info/<category_id>")
 def course_info(category_id):
     if "customer_signed_in" in session:
         all_courses = Course.objects(category_id = category_id, is_activating = True)
         return render_template("page/course-info.html", all_courses = all_courses)
 
 #. Customer sign up
-@lia_app.route("/user/user-sign-up", methods = ["GET", "POST"])
+@app.route("/user/user-sign-up", methods = ["GET", "POST"])
 def customer_sign_up():
     error = None
     if request.method == "GET":
@@ -336,7 +336,7 @@ def customer_sign_up():
         return redirect(url_for("user_sign_in"))
 
 #. Detail Course (Customer)
-@lia_app.route("/course-detail/<course_id>")
+@app.route("/course-detail/<course_id>")
 def course_detail(course_id):
     if "customer_signed_in" in session:
         checking = None
@@ -368,7 +368,7 @@ def course_detail(course_id):
             video_id = video_id)
 
 #. Order course 
-@lia_app.route("/order_course/<course_id>/<customer_id>")
+@app.route("/order_course/<course_id>/<customer_id>")
 def order_course(course_id, customer_id):
     if "customer_signed_in" in session:
         order = Order.objects(course_id__exact = course_id, customer_id__exact = customer_id, is_purchased = False)
@@ -385,7 +385,7 @@ def order_course(course_id, customer_id):
             return render_template("page/ordered-course.html")
 
 #. User sign out
-@lia_app.route("/user/user-sign-out")
+@app.route("/user/user-sign-out")
 def user_sign_out():    
     if "admin_signed_in" in session:
         del session["admin_signed_in"]
@@ -395,102 +395,102 @@ def user_sign_out():
 
 # ---PAGE---
 #. Category
-@lia_app.route("/category/esport")
+@app.route("/category/esport")
 def esport():
     return render_template("category/esport.html")
 
 #. Route Music
-@lia_app.route("/category/music")    
+@app.route("/category/music")    
 def music():
     return render_template("category/music.html")
 
 #. Route Sport
-@lia_app.route("/category/sport")
+@app.route("/category/sport")
 def sport():
     return render_template("category/sport.html")
 
 #. Introduction
 #. Route Gym
-@lia_app.route("/introduction/gym")
+@app.route("/introduction/gym")
 def gym():
     return render_template("category/introduction/what-is-gym.html")
 
 #. Route LOL
-@lia_app.route("/introduction/lol")
+@app.route("/introduction/lol")
 def lol():
     return render_template("category/introduction/what-is-lol.html")
 
 #. Route PES
-@lia_app.route("/introduction/pes")
+@app.route("/introduction/pes")
 def pes():
    return render_template("category/introduction/what-is-pes.html")
 
 #. Route DOTA2
-@lia_app.route("/introduction/dota2")
+@app.route("/introduction/dota2")
 def dota2():
     return render_template("category/introduction/what-is-dota2.html")
 
-@lia_app.route("/introduction/football")
+@app.route("/introduction/football")
 def football():
     return render_template("category/introduction/what-is-football.html")
 
 #. Route Basketball
-@lia_app.route("/introduction/basketball")
+@app.route("/introduction/basketball")
 def basketball():
     return render_template("category/introduction/what-is-basketball.html")
 
 #. Route Guitar
-@lia_app.route("/introduction/guitar")
+@app.route("/introduction/guitar")
 def guitar():
     return render_template("category/introduction/what-is-guitar.html")
 
 #. Route Piano
-@lia_app.route("/introduction/piano")
+@app.route("/introduction/piano")
 def piano():
     return render_template("category/introduction/what-is-piano.html")
 
 #. Route Ukulele
-@lia_app.route("/introduction/ukulele")
+@app.route("/introduction/ukulele")
 def ukulele():
     return render_template("category/introduction/what-is-ukulele.html")
 
 #. Basic knowlegde
 #. Route Football
-@lia_app.route("/basic-learing/football")
+@app.route("/basic-learing/football")
 def basic_learning_football():
     return render_template("category/basic-knowledge/basic-learning-football.html")
 
 #. Route Basketball
-@lia_app.route("/basic-learing/basketball")
+@app.route("/basic-learing/basketball")
 def basic_learning_basketball():
     return render_template("category/basic-knowledge/basic-learning-basketball.html")
 
 #. Route Guitar
-@lia_app.route("/basic-learing/guitar")
+@app.route("/basic-learing/guitar")
 def basic_learning_guitar():
     return render_template("category/basic-knowledge/basic-learning-guitar.html")
 
 #. Route Gym
-@lia_app.route("/basic-learing/gym")
+@app.route("/basic-learing/gym")
 def basic_learning_gym():
     return render_template("category/basic-knowledge/basic-learning-gym.html")
 
 #. Route LOL
-@lia_app.route("/basic-learing/lol")
+@app.route("/basic-learing/lol")
 def basic_learning_lol():
     return render_template ("category/basic-knowledge/basic-learning-lol.html")
 
 #. Route PES
-@lia_app.route("/basic-learing/pes")
+@app.route("/basic-learing/pes")
 def basic_learning_pes():
     return render_template("category/basic-knowledge/basic-learning-pes.html")
 
-@lia_app.route("/basic-learning/piano")
+@app.route("/basic-learning/piano")
 def basic_learning_piano():
     return render_template("category/basic-knowledge/basic-learning-piano.html")
 
 #. Route Dota 2
-@lia_app.route("/basic-learing/dota2")
+@app.route("/basic-learing/dota2")
 def basic_learning_dota2():
     return render_template("category/basic-knowledge/basic-learning-dota2.html")
 
@@ -501,6 +501,5 @@ def basic_learning_dota2():
 #     return render_template("page/testing.html", course = course)
 
 if __name__ == '__main__':
-    lia_app.run(debug=True)
-
+    app.run(debug=True)
 
