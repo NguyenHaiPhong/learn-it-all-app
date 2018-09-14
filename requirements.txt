@@ -20,4 +20,5 @@ gunicorn
 # Others
 # ----------------------
 addict
-shortuuidyoutube_dl 
+shortuuid
+youtube_dl 
