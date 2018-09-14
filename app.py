@@ -135,9 +135,9 @@ def admin_show_all_courses():
 #. Update lecturer
 @app.route("/admin/update-lecturer/<lecturer_id>", methods = ["GET", "POST"])
 def admin_update_lecturer(lecturer_id):
+    lecturer = Lecturer.objects.with_id(lecturer_id)
     if request.method == "GET":
         if "admin_signed_in" in session:
-            lecturer = Lecturer.objects.with_id(lecturer_id)
             return render_template("user/admin/update-lecturer.html", lecturer = lecturer)
         else:
             return redirect(url_for("user_sign_in"))
@@ -150,19 +150,18 @@ def admin_update_lecturer(lecturer_id):
         phone_number = form["phone-number"]
         body_fat = form["body-fat"]
         description = form["description"]
-        update_lecturer = lecturer
-        update_lecturer.update(set__name = name, set__email = email,
+        lecturer.update(set__name = name, set__email = email,
         set__height = height, set__weight = weight,set__body_fat = body_fat, set__phone_number = phone_number, 
         set__description = description)
-        Lecturer.reload(update_lecturer)
+        Lecturer.reload(lecturer)
         return redirect(url_for("admin_show_all_lecturers"))
 
 #. Update course
 @app.route("/admin/update-course/<course_id>", methods = ["GET", "POST"])
 def admin_update_course(course_id):
+    course = Course.objects.with_id(course_id)
     if request.method == "GET":
-        if "admin_signed_in" in session:
-            course = Course.objects.with_id(course_id)
+        if "admin_signed_in" in session:   
             return render_template("user/admin/update-course.html", course = course)
         else:
             return redirect(url_for("user_sign_in"))
@@ -172,11 +171,9 @@ def admin_update_course(course_id):
         level = form["level"]
         fee = form["fee"]
         description = form["description"]
-        course = Course.objects.with_id(course_id)
-        update_course = course
-        update_course.update(set__name = name, set__level = level,
+        course.update(set__name = name, set__level = level,
         set__fee = fee, set__description = description)
-        Course.reload(update_course)
+        Course.reload(course)
         return redirect(url_for("admin_show_all_courses"))
 
 #. Accept Order
@@ -184,9 +181,8 @@ def admin_update_course(course_id):
 def admin_accept_orders(order_id):
     if "admin_signed_in" in session:
         order = Order.objects.with_id(order_id)
-        accept_order = order
-        accept_order.update(set__is_purchased = True)
-        Order.reload(accept_order)
+        order.update(set__is_purchased = True)
+        Order.reload(order)
         return redirect(url_for("admin_show_all_orders"))            
     else:   
         return redirect(url_for("user_sign_in"))
@@ -194,8 +190,8 @@ def admin_accept_orders(order_id):
 #. Delete Lecturer
 @app.route("/admin/del-lecturer/<lecturer_id>")
 def admin_del_lecturer(lecturer_id):
+    lecturer = Lecturer.objects.with_id(lecturer_id)
     if "admin_signed_in" in session:
-        lecturer = Lecturer.objects.with_id(lecturer_id)
         lecturer.update(set__is_activating = False)
         Lecturer.reload(lecturer)
         all_courses = lecturer.course_id
@@ -254,6 +250,24 @@ def customer_profile(customer_id):
         all_purchased_courses = all_purchased_courses)
     else:
         return redirect(url_for("user_sign_in"))
+
+#. Update profile
+@app.route("/customer-profile/update-profile/<customer_id>", methods = ["GET", "POST"])
+def update_profile(customer_id):
+    customer = User.objects.with_id(customer_id)
+    if request.method == "GET":
+        if "customer_signed_in" in session:
+            return render_template("user/customer/update-profile.html", customer = customer)
+        else:
+            return redirect(url_for("user_sign_in"))
+    elif request.method == "POST":
+        form = request.form
+        name = form["name"]
+        email = form["email"]
+        phone_number = form["phone-number"]
+        customer.update(set__name = name, set__email = email, set__phone_number = phone_number)
+        User.reload(customer)
+        return redirect(url_for("customer_profile", customer_id = session["customer_signed_in_id"]))
 
 #. Course content
 @app.route("/course-content/<course_id>")
