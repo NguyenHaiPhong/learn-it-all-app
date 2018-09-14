@@ -21,4 +21,4 @@ gunicorn
 # ----------------------
 addict
 shortuuid
-youtube_dl 
+youtube-dl 
